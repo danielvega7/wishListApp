@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eCF-uh-sHC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eCF-uh-sHC">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -69,50 +69,36 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultUser" translatesAutoresizingMaskIntoConstraints="NO" id="y3k-dc-62y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="147"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="80" id="RFH-im-yRK"/>
-                                                                <constraint firstAttribute="height" constant="80" id="ftF-6r-u2v"/>
+                                                                <constraint firstAttribute="height" constant="150" id="Ap3-0H-0TR"/>
+                                                                <constraint firstAttribute="width" constant="150" id="iHf-o1-Lla"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dX1-ti-FFb">
-                                                            <rect key="frame" x="0.0" y="83" width="150" height="67"/>
+                                                            <rect key="frame" x="0.0" y="150" width="150" height="0.0"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wy-tG-we3">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="67"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="0.0"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L29-Cq-qwS">
-                                                                    <rect key="frame" x="80" y="0.0" width="70" height="67"/>
+                                                                    <rect key="frame" x="80" y="0.0" width="70" height="0.0"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" image="option" catalog="system"/>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="y3k-dc-62y" secondAttribute="trailing" id="8SY-3d-G85"/>
-                                                        <constraint firstItem="dX1-ti-FFb" firstAttribute="top" secondItem="y3k-dc-62y" secondAttribute="bottom" constant="3" id="ANb-34-t3Y"/>
-                                                        <constraint firstItem="y3k-dc-62y" firstAttribute="leading" secondItem="TGp-on-n6C" secondAttribute="leading" id="Bdt-V9-zlq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="y3k-dc-62y" secondAttribute="trailing" id="WI3-dk-PRI"/>
-                                                        <constraint firstItem="dX1-ti-FFb" firstAttribute="top" secondItem="y3k-dc-62y" secondAttribute="bottom" constant="3" id="aSy-tY-des"/>
-                                                        <constraint firstAttribute="trailing" secondItem="dX1-ti-FFb" secondAttribute="trailing" id="gft-ea-fZ6"/>
-                                                        <constraint firstItem="dX1-ti-FFb" firstAttribute="top" secondItem="y3k-dc-62y" secondAttribute="bottom" constant="3" id="gtZ-sg-FTk"/>
-                                                        <constraint firstItem="y3k-dc-62y" firstAttribute="top" secondItem="TGp-on-n6C" secondAttribute="top" id="kLa-mW-sAW"/>
-                                                        <constraint firstAttribute="bottom" secondItem="dX1-ti-FFb" secondAttribute="bottom" id="piO-ww-rl5"/>
-                                                        <constraint firstItem="y3k-dc-62y" firstAttribute="top" secondItem="TGp-on-n6C" secondAttribute="top" id="pzw-3w-ndz"/>
-                                                        <constraint firstItem="y3k-dc-62y" firstAttribute="leading" secondItem="TGp-on-n6C" secondAttribute="leading" id="sF9-Wg-aaF"/>
-                                                        <constraint firstItem="dX1-ti-FFb" firstAttribute="leading" secondItem="TGp-on-n6C" secondAttribute="leading" id="wYG-eG-h5M"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TGp-on-n6C" firstAttribute="top" secondItem="Hml-pt-gUF" secondAttribute="top" id="5oK-Dc-ve4"/>
-                                                <constraint firstItem="TGp-on-n6C" firstAttribute="leading" secondItem="Hml-pt-gUF" secondAttribute="leading" id="g37-gx-XxH"/>
-                                                <constraint firstAttribute="trailing" secondItem="TGp-on-n6C" secondAttribute="trailing" id="mhK-fo-CMH"/>
-                                                <constraint firstAttribute="bottom" secondItem="TGp-on-n6C" secondAttribute="bottom" id="pZd-Cm-NNR"/>
+                                                <constraint firstAttribute="trailing" secondItem="TGp-on-n6C" secondAttribute="trailing" id="6fu-BI-plt"/>
+                                                <constraint firstItem="TGp-on-n6C" firstAttribute="leading" secondItem="Hml-pt-gUF" secondAttribute="leading" id="XoP-zv-JVs"/>
+                                                <constraint firstAttribute="bottom" secondItem="TGp-on-n6C" secondAttribute="bottom" id="pAR-GM-TLz"/>
+                                                <constraint firstItem="TGp-on-n6C" firstAttribute="top" secondItem="Hml-pt-gUF" secondAttribute="top" id="uv9-F4-MSb"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="150" height="150"/>
