@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06738CF22788F24B003C8D8A /* User Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06738CF12788F24B003C8D8A /* User Class.swift */; };
 		11434D512785F0A80023CBAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11434D502785F0A80023CBAB /* AppDelegate.swift */; };
 		11434D532785F0A80023CBAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11434D522785F0A80023CBAB /* SceneDelegate.swift */; };
 		11434D552785F0A80023CBAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11434D542785F0A80023CBAB /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06738CF12788F24B003C8D8A /* User Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Class.swift"; sourceTree = "<group>"; };
 		11434D4D2785F0A80023CBAB /* wishListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wishListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11434D502785F0A80023CBAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11434D522785F0A80023CBAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				11434D522785F0A80023CBAB /* SceneDelegate.swift */,
 				11434D542785F0A80023CBAB /* ViewController.swift */,
 				11434D562785F0A80023CBAB /* Main.storyboard */,
+				06738CF12788F24B003C8D8A /* User Class.swift */,
 				11497CB92788919B00DB227C /* CustomCell.swift */,
 				11497CB7278890EF00DB227C /* collectionViewController.swift */,
 				11434D5C2785F0AB0023CBAB /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			files = (
 				11434D5B2785F0A80023CBAB /* wishListApp.xcdatamodeld in Sources */,
 				11497CB8278890EF00DB227C /* collectionViewController.swift in Sources */,
+				06738CF22788F24B003C8D8A /* User Class.swift in Sources */,
 				11434D552785F0A80023CBAB /* ViewController.swift in Sources */,
 				11434D512785F0A80023CBAB /* AppDelegate.swift in Sources */,
 				11497CBA2788919B00DB227C /* CustomCell.swift in Sources */,

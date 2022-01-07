@@ -87,7 +87,7 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L29-Cq-qwS">
                                                                     <rect key="frame" x="80" y="0.0" width="70" height="0.0"/>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="plain" image="option" catalog="system"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" image="photo" catalog="system"/>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -120,7 +120,19 @@
                             <constraint firstItem="E2Y-Cl-uDX" firstAttribute="bottom" secondItem="fy4-Lp-PaU" secondAttribute="bottom" id="iml-40-wUJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dCj-c7-LiL"/>
+                    <navigationItem key="navigationItem" id="dCj-c7-LiL">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" style="plain" id="jaG-36-2Jy">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ccu-fP-Xcj">
+                                <rect key="frame" x="288" y="5" width="86" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="addAction:" destination="RSQ-Aa-DD8" eventType="touchUpInside" id="TEP-9H-twC"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionViewOutlet" destination="fy4-Lp-PaU" id="bmv-Me-fPG"/>
                     </connections>
@@ -150,7 +162,8 @@
     </scenes>
     <resources>
         <image name="defaultUser" width="400" height="400"/>
-        <image name="option" catalog="system" width="128" height="106"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="wishlist" width="456" height="456"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

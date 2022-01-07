@@ -6,7 +6,10 @@
 //
 
 import UIKit
-
+public class StaticClass: Codable{
+    
+    static var userArray = [User]()
+}
 class collectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
    
     
@@ -18,17 +21,76 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
 
         collectionViewOutlet.dataSource = self
         collectionViewOutlet.delegate = self
+        
+//        if let users = UserDefaults.standard.data(forKey: "users") {
+//            let decoder = JSONDecoder()
+//            if let decoded = try? decoder.decode([User].self, from: users){
+//                StaticClass.userArray = decoded
+//               
+//            }
+//        }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return StaticClass.userArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CustomCell
+        cell.textChange(t: StaticClass.userArray[indexPath.row].username)
+        cell.imageChange(i: StaticClass.userArray[indexPath.row].userImage)
         return cell
     }
-   
-
+    
+    func presentAlertController(){
+        
+            let alertController = UIAlertController(title: "Add User",
+                                                    message: nil,
+                                                    preferredStyle: .alert)
+            alertController.addTextField { (textField) in
+                textField.placeholder = "User name"
+                
+                
+            }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Password"
+            
+            
+        }
+           
+            let addUserAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
+                if let userName = textFields[0].text {
+                    if let password = textFields[1].text{
+                        StaticClass.userArray.append(User(u: userName, p: password, i: UIImage(named: "defaultUser")!))
+//                        let encoder = JSONEncoder()
+//
+//                        if let encoded = try? encoder.encode(StaticClass.userArray) {
+//
+//                            UserDefaults.standard.set(encoded, forKey: "users")
+//
+//                        }
+                    }
+                                                   
+                                                    
+                }
+                
+                
+                self.collectionViewOutlet.reloadData()
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            alertController.addAction(addUserAction)
+            
+            self.present(alertController,
+                         animated: true)
+           
+        }
+    
+    @IBAction func addAction(_ sender: UIButton) {
+        
+     presentAlertController()
+        
+    }
+    
 }
