@@ -14,6 +14,8 @@
 		11434D5B2785F0A80023CBAB /* wishListApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11434D592785F0A80023CBAB /* wishListApp.xcdatamodeld */; };
 		11434D5D2785F0AB0023CBAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11434D5C2785F0AB0023CBAB /* Assets.xcassets */; };
 		11434D602785F0AB0023CBAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11434D5E2785F0AB0023CBAB /* LaunchScreen.storyboard */; };
+		11497CB8278890EF00DB227C /* collectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11497CB7278890EF00DB227C /* collectionViewController.swift */; };
+		11497CBA2788919B00DB227C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11497CB92788919B00DB227C /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		11434D5C2785F0AB0023CBAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11434D5F2785F0AB0023CBAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11434D612785F0AB0023CBAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11497CB7278890EF00DB227C /* collectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionViewController.swift; sourceTree = "<group>"; };
+		11497CB92788919B00DB227C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				11434D522785F0A80023CBAB /* SceneDelegate.swift */,
 				11434D542785F0A80023CBAB /* ViewController.swift */,
 				11434D562785F0A80023CBAB /* Main.storyboard */,
+				11497CB92788919B00DB227C /* CustomCell.swift */,
+				11497CB7278890EF00DB227C /* collectionViewController.swift */,
 				11434D5C2785F0AB0023CBAB /* Assets.xcassets */,
 				11434D5E2785F0AB0023CBAB /* LaunchScreen.storyboard */,
 				11434D612785F0AB0023CBAB /* Info.plist */,
@@ -142,8 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				11434D5B2785F0A80023CBAB /* wishListApp.xcdatamodeld in Sources */,
+				11497CB8278890EF00DB227C /* collectionViewController.swift in Sources */,
 				11434D552785F0A80023CBAB /* ViewController.swift in Sources */,
 				11434D512785F0A80023CBAB /* AppDelegate.swift in Sources */,
+				11497CBA2788919B00DB227C /* CustomCell.swift in Sources */,
 				11434D532785F0A80023CBAB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
