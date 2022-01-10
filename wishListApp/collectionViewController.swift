@@ -18,6 +18,10 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "defaultCollectionViewBackground2")
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "defaultCollectionViewBackground2")
 
         collectionViewOutlet.dataSource = self
         collectionViewOutlet.delegate = self
