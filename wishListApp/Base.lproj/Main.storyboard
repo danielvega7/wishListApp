@@ -70,10 +70,14 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultUser" translatesAutoresizingMaskIntoConstraints="NO" id="y3k-dc-62y">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="147"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="150" id="Ap3-0H-0TR"/>
                                                                 <constraint firstAttribute="width" constant="150" id="iHf-o1-Lla"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="oxR-Yd-AXZ" appends="YES" id="WaM-pY-pIN"/>
+                                                            </connections>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dX1-ti-FFb">
                                                             <rect key="frame" x="0.0" y="150" width="150" height="0.0"/>
@@ -138,6 +142,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvM-8j-uSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="oxR-Yd-AXZ"/>
             </objects>
             <point key="canvasLocation" x="1718.840579710145" y="67.633928571428569"/>
         </scene>
