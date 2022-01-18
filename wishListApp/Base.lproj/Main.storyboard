@@ -139,12 +139,29 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionViewOutlet" destination="fy4-Lp-PaU" id="bmv-Me-fPG"/>
+                        <segue destination="9Cl-IE-dfD" kind="show" identifier="toProfile" id="fjj-e0-yka"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvM-8j-uSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="oxR-Yd-AXZ"/>
             </objects>
             <point key="canvasLocation" x="1718.840579710145" y="67.633928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="blC-Ep-fFd">
+            <objects>
+                <viewController id="9Cl-IE-dfD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kyR-dX-laV">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gat-nI-6Q5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jop-Bq-M9r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HoL-XV-7xV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2720" y="68"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1uJ-Cd-GUQ">
