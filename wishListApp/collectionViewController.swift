@@ -9,6 +9,7 @@ import UIKit
 public class StaticClass: Codable{
     
     static var userArray = [User]()
+    static var currentUser = User(u: "default", p: "default", i: UIImage(named: "defaultUser")!)
 }
 class collectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
    
@@ -41,6 +42,9 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
         cell.textChange(t: StaticClass.userArray[indexPath.row].username)
         cell.imageChange(i: StaticClass.userArray[indexPath.row].userImage)
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "userToList", sender: nil)
     }
     
     func presentAlertController(){
