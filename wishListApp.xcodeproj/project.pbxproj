@@ -160,6 +160,7 @@
 				11434D512785F0A80023CBAB /* AppDelegate.swift in Sources */,
 				06738CF427909658003C8D8A /* WishListViewController.swift in Sources */,
 				11497CBA2788919B00DB227C /* CustomCell.swift in Sources */,
+				858B67832797127200DFFD6E /* ProfileViewController.swift in Sources */,
 				11434D532785F0A80023CBAB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

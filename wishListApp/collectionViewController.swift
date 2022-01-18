@@ -6,6 +6,8 @@
 //
 
 import UIKit
+//import DropDown
+
 public class StaticClass: Codable{
     
     static var userArray = [User]()
@@ -19,7 +21,15 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // Set the background of the view to this image
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "defaultCollectionViewBackground2")!)
+        
+        // Made the collection view transparent
+        collectionViewOutlet.backgroundColor = UIColor.clear.withAlphaComponent(0)
 
+        // Added delegate and datasource to collection view controller
         collectionViewOutlet.dataSource = self
         collectionViewOutlet.delegate = self
         
