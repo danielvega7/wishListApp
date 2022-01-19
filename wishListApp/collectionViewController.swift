@@ -12,8 +12,10 @@ public class StaticClass: Codable{
     
     static var userArray = [User]()
     static var currentUser = User(u: "default", p: "default", i: UIImage(named: "defaultUser")!)
+    static let imagePicker = UIImagePickerController()
+    static var alertController = UIAlertController()
 }
-class collectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class collectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
     
 
@@ -22,7 +24,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        StaticClass.imagePicker.delegate = self
         // Set the background of the view to this image
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "defaultCollectionViewBackground2")!)
         
@@ -57,6 +59,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
         performSegue(withIdentifier: "userToList", sender: nil)
     }
     
+    //function for the add user. Called in the add action
     func presentAlertController(){
         
             let alertController = UIAlertController(title: "Add User",

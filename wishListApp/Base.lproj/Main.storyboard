@@ -207,7 +207,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionViewOutlet" destination="fy4-Lp-PaU" id="bmv-Me-fPG"/>
-                        <segue destination="hdp-s6-VDY" kind="show" identifier="userToLIst" id="NbZ-bN-GPl"/>
+                        <segue destination="hdp-s6-VDY" kind="show" identifier="userToList" id="NbZ-bN-GPl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvM-8j-uSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
