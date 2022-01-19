@@ -21,6 +21,10 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
         tableViewOutlet.dataSource = self
    
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        userLabelOutlet.text = StaticClass.currentUser.username
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

@@ -56,7 +56,9 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        StaticClass.currentUser = StaticClass.userArray[indexPath.row]
         performSegue(withIdentifier: "userToList", sender: nil)
+        
     }
     
     //function for the add user. Called in the add action
