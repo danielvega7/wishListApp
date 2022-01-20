@@ -112,4 +112,12 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
         
     }
     
+    
+    @IBAction func longPressOptionsAction(_ sender: UILongPressGestureRecognizer) {
+        
+        print("Happened")
+        
+    }
+    
+    
 }

@@ -229,12 +229,14 @@
                                                 <constraint firstItem="TGp-on-n6C" firstAttribute="top" secondItem="Hml-pt-gUF" secondAttribute="top" id="uv9-F4-MSb"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <gestureRecognizers/>
                                         <size key="customSize" width="165" height="188"/>
                                         <connections>
                                             <outlet property="changePhotoButton" destination="L29-Cq-qwS" id="ri8-Dj-HeJ"/>
                                             <outlet property="imageOutlet" destination="y3k-dc-62y" id="gc8-Zf-qLx"/>
                                             <outlet property="optionButtonOutlet" destination="L29-Cq-qwS" id="zXl-Lb-tiY"/>
                                             <outlet property="textLabelOutlet" destination="4Wy-tG-we3" id="A0G-rh-R49"/>
+                                            <outletCollection property="gestureRecognizers" destination="oNN-xd-toO" appends="YES" id="VIj-mi-RRF"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -268,6 +270,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvM-8j-uSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="oNN-xd-toO">
+                    <connections>
+                        <action selector="longPressOptionsAction:" destination="RSQ-Aa-DD8" id="9f8-Wc-1FI"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1718.4615384615383" y="67.535545023696685"/>
         </scene>
