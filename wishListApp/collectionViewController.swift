@@ -21,6 +21,8 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
 
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     
+    var whichClicked = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -114,10 +116,23 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     
     @IBAction func longPressOptionsAction(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            let touchPoint = sender.location(in: collectionViewOutlet)
+            if let indexPath = collectionViewOutlet.indexPathForItem(at: touchPoint) {
+                whichClicked = indexPath.row
+                print(whichClicked)
+                print(indexPath.item)
+            }
+            var alertController = UIAlertController(title: "test", message: nil, preferredStyle: .alert)
+            var action = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            self.present(alertController,
+                         animated: true)
+           
         
-        print("Happened")
         
     }
     
     
+}
 }
