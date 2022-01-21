@@ -36,6 +36,13 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel?.text = StaticClass.currentUser.itemArray[indexPath.row].name
         return cell
     }
-  
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    @IBAction func editAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "editToAdd", sender: nil)
+    }
+    
 
 }

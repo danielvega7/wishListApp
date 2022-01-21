@@ -14,6 +14,7 @@ public class StaticClass: Codable{
     static var currentUser = User(u: "default", p: "default", i: UIImage(named: "defaultUser")!)
     static var imagePicker = UIImagePickerController()
     static var alertController = UIAlertController()
+    
 }
 class collectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
    
