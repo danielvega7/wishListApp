@@ -24,14 +24,16 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         userLabelOutlet.text = StaticClass.currentUser.username
+        tableViewOutlet.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return StaticClass.currentUser.itemArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        cell.textLabel?.text = StaticClass.currentUser.itemArray[indexPath.row].name
         return cell
     }
   
