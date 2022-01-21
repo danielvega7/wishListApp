@@ -12,21 +12,23 @@ public class StaticClass: Codable{
     
     static var userArray = [User]()
     static var currentUser = User(u: "default", p: "default", i: UIImage(named: "defaultUser")!)
-    static let imagePicker = UIImagePickerController()
+    static var imagePicker = UIImagePickerController()
     static var alertController = UIAlertController()
 }
-class collectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class collectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
    
     
 
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     
     var whichClicked = -1
+    @IBOutlet var longPressGestureOutlet: UILongPressGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         StaticClass.imagePicker.delegate = self
+        longPressGestureOutlet.delegate = self
         // Set the background of the view to this image
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "defaultCollectionViewBackground2")!)
         
@@ -116,16 +118,37 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     
     @IBAction func longPressOptionsAction(_ sender: UILongPressGestureRecognizer) {
+        
         if sender.state == .began {
             let touchPoint = sender.location(in: collectionViewOutlet)
             if let indexPath = collectionViewOutlet.indexPathForItem(at: touchPoint) {
                 whichClicked = indexPath.row
-                print(whichClicked)
-                print(indexPath.item)
+                print(StaticClass.userArray[whichClicked].username)
             }
-            var alertController = UIAlertController(title: "test", message: nil, preferredStyle: .alert)
-            var action = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: "Options", message: nil, preferredStyle: .alert)
+            let action = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+            let accessLibraryAction = UIAlertAction(title: "Access Library", style: .default){_ in
+                StaticClass.imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+                self.present(StaticClass.imagePicker, animated: true, completion: nil)
+                self.collectionViewOutlet.reloadData()
+            }
+            let accessCameraAction = UIAlertAction(title: "Camera", style: .default) {_ in
+                if UIImagePickerController.isSourceTypeAvailable(.camera){
+                    StaticClass.imagePicker.sourceType = UIImagePickerController.SourceType.camera
+                    self.collectionViewOutlet.reloadData()
+                }
+                else{
+                    StaticClass.imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+                    self.collectionViewOutlet.reloadData()
+                }
+                self.collectionViewOutlet.reloadData()
+                self.present(StaticClass.imagePicker, animated: true, completion: nil)
+            }
+            alertController.addAction(accessCameraAction)
+            alertController.addAction(accessLibraryAction)
             alertController.addAction(action)
+            
+            
             self.present(alertController,
                          animated: true)
            
@@ -135,4 +158,10 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     
 }
+    //image picker function
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {  picker.dismiss(animated: true) {
+        StaticClass.userArray[self.whichClicked].userImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
+        self.collectionViewOutlet.reloadData()
+    }
+    }
 }
