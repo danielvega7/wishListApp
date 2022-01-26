@@ -29,7 +29,14 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.textLabel?.text = StaticClass.currentUser.itemArray[indexPath.row].name
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            StaticClass.userArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+          
+        }
+    }
     @IBAction func addAction(_ sender: UIButton) {
         presentAlertController()
         tableViewOultet.reloadData()
