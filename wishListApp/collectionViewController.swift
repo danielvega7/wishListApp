@@ -9,7 +9,7 @@ import UIKit
 //import DropDown
 
 public class StaticClass: Codable{
-    
+    static var groupArray = [Groups]()
     static var userArray = [User]()
     static var currentUser = User(u: "default", p: "default", i: UIImage(named: "defaultUser")!)
     static var imagePicker = UIImagePickerController()
