@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         createAGroupButton.backgroundColor = UIColor(patternImage: UIImage(named: "createAGroupButtonBackground")!)
-       // joinAGroupButton.backgroundColor = UIColor(patternImage: UIImage(named: ))
+        joinAGroupButton.backgroundColor = UIColor(patternImage: UIImage(named: ))
     }
 
     
