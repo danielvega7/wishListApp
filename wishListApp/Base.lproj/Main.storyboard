@@ -51,9 +51,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="owc-3B-ScQ"/>
-                    <connections>
-                        <segue destination="RSQ-Aa-DD8" kind="show" id="1IZ-Tw-LZn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,11 +61,11 @@
             <objects>
                 <viewController id="hdp-s6-VDY" customClass="WishListViewController" customModule="wishListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pfh-Vz-EYf">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tkl-RI-Pq9">
-                                <rect key="frame" x="16" y="125" width="358" height="685"/>
+                                <rect key="frame" x="16" y="37" width="358" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="uvp-PM-jd1" style="IBUITableViewCellStyleDefault" id="x3v-zG-dkS">
@@ -91,10 +88,10 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zep-gM-XoG">
-                                <rect key="frame" x="15" y="93" width="360" height="31"/>
+                                <rect key="frame" x="15" y="5" width="360" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeX-iM-tl1">
-                                        <rect key="frame" x="0.0" y="3.6666666666666714" width="177.66666666666666" height="24"/>
+                                        <rect key="frame" x="0.0" y="3.6666666666666661" width="177.66666666666666" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="systemIndigoColor"/>
                                         <nil key="highlightedColor"/>
@@ -138,11 +135,11 @@
             <objects>
                 <viewController id="adM-W1-1Dh" customClass="AddItemsViewController" customModule="wishListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fid-9R-zAn">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KLM-8W-bY0">
-                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="Njl-fq-cv7" style="IBUITableViewCellStyleDefault" id="N8P-Bm-MFp">
@@ -207,7 +204,7 @@
                         </userGuides>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fy4-Lp-PaU">
-                                <rect key="frame" x="16" y="91" width="358" height="716"/>
+                                <rect key="frame" x="16" y="47" width="358" height="760"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ebu-PM-QS1">
                                     <size key="itemSize" width="182" height="207"/>
