@@ -58,6 +58,7 @@
                     <navigationItem key="navigationItem" id="owc-3B-ScQ"/>
                     <connections>
                         <outlet property="createAGroupButton" destination="k5j-UN-E5b" id="7CI-2E-jvK"/>
+                        <outlet property="joinAGroupButton" destination="85h-j1-P0g" id="57e-Gl-kBC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
