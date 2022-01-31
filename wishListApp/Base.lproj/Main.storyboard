@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eCF-uh-sHC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eCF-uh-sHC">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -23,10 +23,10 @@
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="gAQ-da-dqi">
-                                <rect key="frame" x="77" y="288" width="235" height="362"/>
+                                <rect key="frame" x="76.999999999999986" y="288" width="233.66666666666666" height="362"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5j-UN-E5b">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="233.66666666666666" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="   Create a Group">
                                             <backgroundConfiguration key="background"/>
@@ -34,14 +34,14 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85h-j1-P0g">
-                                        <rect key="frame" x="10" y="164" width="215" height="34"/>
+                                        <rect key="frame" x="10" y="164" width="213.66666666666666" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="person.2.fill" catalog="system" title="   Join a Group">
                                             <fontDescription key="titleFontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="20"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jp-KX-M5j">
-                                        <rect key="frame" x="8.6666666666666714" y="328" width="217.66666666666663" height="34"/>
+                                        <rect key="frame" x="8.6666666666666714" y="328" width="216.33333333333331" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="rectangle.and.pencil.and.ellipsis" catalog="system" title="   Create a List">
                                             <fontDescription key="titleFontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="20"/>
@@ -392,9 +392,9 @@
     <resources>
         <image name="defaultUser" width="400" height="400"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.2.fill" catalog="system" width="128" height="80"/>
+        <image name="person.2.fill" catalog="system" width="32" height="32"/>
         <image name="photo" catalog="system" width="128" height="93"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus" catalog="system" width="32" height="32"/>
         <image name="rectangle.and.pencil.and.ellipsis" catalog="system" width="128" height="81"/>
         <image name="wishlist" width="456" height="456"/>
         <systemColor name="opaqueSeparatorColor">

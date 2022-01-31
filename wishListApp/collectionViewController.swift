@@ -51,13 +51,13 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return StaticClass.userArray.count
+        return StaticClass.currentUser.groupArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CustomCell
-        cell.textChange(t: StaticClass.userArray[indexPath.row].username)
-        cell.imageChange(i: StaticClass.userArray[indexPath.row].userImage)
+        cell.textChange(t: StaticClass.currentUser.groupArray[indexPath.row].groupName)
+        cell.imageChange(i: StaticClass.currentUser.groupArray[indexPath.row].groupImage)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

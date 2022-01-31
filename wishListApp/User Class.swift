@@ -32,7 +32,9 @@ public class User{
 public class Groups{
     var groupName: String
     var users = [User]()
-    init(gn: String){
+    var groupImage: UIImage
+    init(gn: String, gi: UIImage){
         groupName = gn
+        groupImage = gi
     }
 }
