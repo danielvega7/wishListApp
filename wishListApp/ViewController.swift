@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         createAGroupButton.backgroundColor = UIColor(patternImage: UIImage(named: "createAGroupButtonBackground")!)
         joinAGroupButton.backgroundColor = UIColor(patternImage: UIImage(named: "joinAGroupButtonBackground")!)
-        // hello
     }
 
     
