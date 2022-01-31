@@ -56,6 +56,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="person" catalog="system" title=" Sign In">
                                     <fontDescription key="titleFontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="NCU-Me-0Nk" kind="show" identifier="homeToSignIn" id="Yy0-Wu-t0N"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wishlist" translatesAutoresizingMaskIntoConstraints="NO" id="lkd-ug-Tuf">
                                 <rect key="frame" x="57" y="72" width="276" height="150"/>
@@ -75,6 +78,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="927.69230769230762" y="67.535545023696685"/>
+        </scene>
+        <!--View Controller Sign In-->
+        <scene sceneID="tff-07-acs">
+            <objects>
+                <viewController id="NCU-Me-0Nk" customClass="ViewControllerSignIn" customModule="wishListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kR7-FC-NZ0">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-6O-gyf">
+                                <rect key="frame" x="16" y="202" width="358" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="rectangle.and.pencil.and.ellipsis" catalog="system" title="   Existing User">
+                                    <fontDescription key="titleFontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwY-s7-QdE">
+                                <rect key="frame" x="16" y="433" width="358" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="rectangle.and.pencil.and.ellipsis" catalog="system" title="   New User">
+                                    <fontDescription key="titleFontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q0G-6M-dtT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MlP-Ef-BZH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oij-KF-baT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927.69230769230762" y="800.47393364928905"/>
         </scene>
         <!--Wish List View Controller-->
         <scene sceneID="Asa-wo-0JM">

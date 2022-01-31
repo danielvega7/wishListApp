@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06738CF22788F24B003C8D8A /* User Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06738CF12788F24B003C8D8A /* User Class.swift */; };
 		06738CF427909658003C8D8A /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06738CF327909658003C8D8A /* WishListViewController.swift */; };
+		06E9489827A5C2C100AC50C0 /* ViewControllerSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E9489727A5C2C100AC50C0 /* ViewControllerSignIn.swift */; };
 		11434D512785F0A80023CBAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11434D502785F0A80023CBAB /* AppDelegate.swift */; };
 		11434D532785F0A80023CBAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11434D522785F0A80023CBAB /* SceneDelegate.swift */; };
 		11434D552785F0A80023CBAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11434D542785F0A80023CBAB /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		06738CF12788F24B003C8D8A /* User Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Class.swift"; sourceTree = "<group>"; };
 		06738CF327909658003C8D8A /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		06E9489727A5C2C100AC50C0 /* ViewControllerSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSignIn.swift; sourceTree = "<group>"; };
 		11434D4D2785F0A80023CBAB /* wishListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wishListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11434D502785F0A80023CBAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11434D522785F0A80023CBAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				11434D522785F0A80023CBAB /* SceneDelegate.swift */,
 				11434D542785F0A80023CBAB /* ViewController.swift */,
 				11434D562785F0A80023CBAB /* Main.storyboard */,
+				06E9489727A5C2C100AC50C0 /* ViewControllerSignIn.swift */,
 				11D9B9E22799B581003251CF /* AddItemsViewController.swift */,
 				06738CF327909658003C8D8A /* WishListViewController.swift */,
 				06738CF12788F24B003C8D8A /* User Class.swift */,
@@ -162,6 +165,7 @@
 				11434D552785F0A80023CBAB /* ViewController.swift in Sources */,
 				11D9B9E32799B581003251CF /* AddItemsViewController.swift in Sources */,
 				11434D512785F0A80023CBAB /* AppDelegate.swift in Sources */,
+				06E9489827A5C2C100AC50C0 /* ViewControllerSignIn.swift in Sources */,
 				06738CF427909658003C8D8A /* WishListViewController.swift in Sources */,
 				11497CBA2788919B00DB227C /* CustomCell.swift in Sources */,
 				11434D532785F0A80023CBAB /* SceneDelegate.swift in Sources */,
