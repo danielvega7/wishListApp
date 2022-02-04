@@ -17,6 +17,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var createAListButton: UIButton!
     
     
+    @IBOutlet weak var logInButton: UIBarButtonItem!
+    
+    @IBOutlet weak var logInButtonSegment: UIButton!
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         view.backgroundColor = UIColor(red: 0.9137, green: 0.9255, blue: 0.9686, alpha: 1)
         
@@ -28,6 +35,10 @@ class ViewController: UIViewController {
         
         createAListButton.backgroundColor = UIColor(red: 0, green: 0.7176, blue: 0.3333, alpha: 1)
         createAListButton.layer.cornerRadius = 25
+        
+        logInButtonSegment.backgroundColor = UIColor(patternImage: UIImage(named: "logInBackgroundColor")!)
+        logInButtonSegment.layer.cornerRadius = 20
+        
     }
     
     override func viewDidLoad() {
@@ -40,6 +51,7 @@ class ViewController: UIViewController {
     
     @IBAction func createAGroupButtonAction(_ sender: UIButton) {
         createAGroupButton.backgroundColor = UIColor(red: 0.8431, green: 0.8745, blue: 0.8863, alpha: 1)
+        //do {sleep(1)}
         performSegue(withIdentifier: "toCollectionViewController", sender: nil)
     }
     
@@ -55,8 +67,11 @@ class ViewController: UIViewController {
     }
     
     
- 
-
+    @IBAction func logInButtonSegmentAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "toLogInViewController", sender: nil)
+    }
+    
+    
     
     
     
