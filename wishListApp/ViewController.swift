@@ -17,12 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var createAListButton: UIButton!
     
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+    override func viewWillAppear(_ animated: Bool) {
         view.backgroundColor = UIColor(red: 0.9137, green: 0.9255, blue: 0.9686, alpha: 1)
         
         createAGroupButton.backgroundColor = UIColor(red: 0.1255, green: 0.4, blue: 0.9333, alpha: 1)
@@ -33,6 +28,11 @@ class ViewController: UIViewController {
         
         createAListButton.backgroundColor = UIColor(red: 0, green: 0.7176, blue: 0.3333, alpha: 1)
         createAListButton.layer.cornerRadius = 25
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
         
       
     }

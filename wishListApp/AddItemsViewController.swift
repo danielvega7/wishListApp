@@ -20,6 +20,10 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view.
     }
     
+    /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        //StaticClass.currentUser
+    }*/
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         StaticClass.currentUser.itemArray.count
     }

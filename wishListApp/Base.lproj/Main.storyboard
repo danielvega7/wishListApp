@@ -61,7 +61,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="createAListButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qoA-7K-lor"/>
-                                            <action selector="joinAGroupButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dpN-Dd-7Y3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -266,7 +265,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
-                            <userLayoutGuide location="445" affinity="minY"/>
+                            <userLayoutGuide location="444" affinity="minY"/>
                         </userGuides>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fy4-Lp-PaU">
