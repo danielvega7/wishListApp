@@ -10,6 +10,7 @@ import UIKit
 
 public class StaticClass: Codable{
     static var groupArray = [Groups]()
+    static var indexOf = -1
     static var userArray = [User]()
     static var currentUser = User(u: "default", p: "default", i: UIImage(named: "defaultUser")!)
     static var imagePicker = UIImagePickerController()
@@ -61,7 +62,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        StaticClass.currentUser = StaticClass.userArray[indexPath.row]
+        StaticClass.indexOf = indexPath.row
         performSegue(withIdentifier: "userToList", sender: nil)
         
     }
@@ -69,24 +70,24 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     //function for the add user. Called in the add action
     func presentAlertController(){
         
-            let alertController = UIAlertController(title: "Add User",
+            let alertController = UIAlertController(title: "Add Group",
                                                     message: nil,
                                                     preferredStyle: .alert)
             alertController.addTextField { (textField) in
-                textField.placeholder = "User name"
+                textField.placeholder = "Group name"
                 
                 
             }
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Password"
-            
-            
-        }
+//        alertController.addTextField { (textField) in
+//            textField.placeholder = "Password"
+//
+//
+//        }
            
-            let addUserAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
-                if let userName = textFields[0].text {
-                    if let password = textFields[1].text{
-                        StaticClass.userArray.append(User(u: userName, p: password, i: UIImage(named: "defaultUser")!))
+            let addGroupAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
+                if let groupName = textFields[0].text {
+                    
+                    StaticClass.currentUser.groupArray.append(Groups(gn: groupName, gi: UIImage(named: "defaultUser")!))
 //                        let encoder = JSONEncoder()
 //
 //                        if let encoded = try? encoder.encode(StaticClass.userArray) {
@@ -94,7 +95,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
 //                            UserDefaults.standard.set(encoded, forKey: "users")
 //
 //                        }
-                    }
+                    
                                                    
                                                     
                 }
@@ -104,7 +105,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
-            alertController.addAction(addUserAction)
+            alertController.addAction(addGroupAction)
             
             self.present(alertController,
                          animated: true)
@@ -124,7 +125,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
             let touchPoint = sender.location(in: collectionViewOutlet)
             if let indexPath = collectionViewOutlet.indexPathForItem(at: touchPoint) {
                 whichClicked = indexPath.row
-                print(StaticClass.userArray[whichClicked].username)
+               
             }
             let alertController = UIAlertController(title: "Options", message: nil, preferredStyle: .alert)
             let action = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
@@ -161,7 +162,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
 }
     //image picker function
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {  picker.dismiss(animated: true) {
-        StaticClass.userArray[self.whichClicked].userImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
+        StaticClass.currentUser.groupArray[self.whichClicked].groupImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
         self.collectionViewOutlet.reloadData()
     }
     }
