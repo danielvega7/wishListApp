@@ -139,18 +139,24 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="a9s-qj-GlS">
-                                <rect key="frame" x="142" y="302" width="131" height="31"/>
+                                <rect key="frame" x="142" y="302" width="232" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="signInOrSignUpSegmentedControlChanged:" destination="NCU-Me-0Nk" eventType="valueChanged" id="Iec-SI-qyX"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q0G-6M-dtT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="MlP-Ef-BZH"/>
+                    <connections>
+                        <outlet property="signInOrSignUpSegmentedControl" destination="a9s-qj-GlS" id="Z92-jR-CJ6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oij-KF-baT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
