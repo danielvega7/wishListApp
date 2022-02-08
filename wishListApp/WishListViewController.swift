@@ -28,7 +28,7 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StaticClass.currentUser.itemArray.count
+        return StaticClass.groupArray[StaticClass.indexOf].users[section].itemArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
