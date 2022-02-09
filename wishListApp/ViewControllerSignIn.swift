@@ -20,7 +20,7 @@ class ViewControllerSignIn: UIViewController {
     
     @IBOutlet weak var labelUnderHello: UILabel!
     
-    
+    // added 
     
     @IBOutlet var firstImageViewTapGestureRecognizer: UITapGestureRecognizer!
     
