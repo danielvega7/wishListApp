@@ -9,7 +9,7 @@ import UIKit
 
 class WishListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
-    
+    var fosho = 0
 
     @IBOutlet weak var userLabelOutlet: UILabel!
     @IBOutlet weak var tableViewOutlet: UITableView!
@@ -28,16 +28,33 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StaticClass.groupArray[StaticClass.indexOf].users[section].itemArray.count
+        
+        if StaticClass.groupArray[StaticClass.indexOf].users.count < 1{
+            return 1
+        }
+        else{
+            return StaticClass.groupArray[StaticClass.indexOf].users.count
+        }
+        
        //stuff happened to push
         //yessah
         
         
     }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+           let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        view.backgroundColor =  UIColor(cgColor: .init(red: 100, green: 1, blue: 100, alpha: 1))
+             
+           let lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 40))
+           lbl.font = UIFont.systemFont(ofSize: 20)
+        lbl.text = StaticClass.groupArray[StaticClass.indexOf].users[section].username
+           view.addSubview(lbl)
+           return view
+         }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        cell.textLabel?.text = StaticClass.currentUser.itemArray[indexPath.row].name
+        cell.textLabel?.text = StaticClass.groupArray[StaticClass.indexOf].users[indexPath.section].itemArray[indexPath.row].name
         return cell
     }
     
@@ -45,7 +62,10 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     @IBAction func editAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "editToAdd", sender: nil)
+        StaticClass.groupArray[StaticClass.indexOf].users.append(User(u: "default \(fosho)", p: "default", i: UIImage(named: "defaultUser")!))
+        fosho += 1
+        tableViewOutlet.reloadData()
+//        performSegue(withIdentifier: "editToAdd", sender: nil)
     }
     
 
