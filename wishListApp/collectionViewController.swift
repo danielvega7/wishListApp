@@ -10,7 +10,7 @@ import UIKit
 
 public class StaticClass: Codable{
     static var groupArray = [Groups]()
-    static var indexOf = -1
+    static var indexOf = 0
     static var userArray = [User]()
     static var currentUser = User(u: "default", p: "default", i: UIImage(named: "defaultUser")!)
     static var imagePicker = UIImagePickerController()
@@ -63,6 +63,8 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         StaticClass.indexOf = indexPath.row
+        StaticClass.groupArray[StaticClass.indexOf].add()
+        StaticClass.groupArray[StaticClass.indexOf].add()
         performSegue(withIdentifier: "userToList", sender: nil)
         
     }

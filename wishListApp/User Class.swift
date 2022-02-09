@@ -32,6 +32,9 @@ public class User{
 public class Groups{
     var groupName: String
     var users = [User]()
+    func add() {
+        users.append(User(u: "default", p: "default", i: UIImage(named: "defaultUser")!))
+    }
     var groupImage: UIImage
     init(gn: String, gi: UIImage){
         groupName = gn
