@@ -19,27 +19,37 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
-   
+        tableViewOutlet.clipsToBounds = true
+        tableViewOutlet.layer.cornerRadius = 30
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        userLabelOutlet.text = StaticClass.currentUser.username
+        userLabelOutlet.text = StaticClass.currentUser.groupArray[StaticClass.indexOf].groupName
         tableViewOutlet.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if StaticClass.groupArray[StaticClass.indexOf].users.count < 1{
-            return 1
-        }
-        else{
-            return StaticClass.groupArray[StaticClass.indexOf].users.count
-        }
+        
+        return StaticClass.currentUser.groupArray[StaticClass.indexOf].users[section].itemArray.count
+        
         
        //stuff happened to push
         //yessah
         
         
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return StaticClass.currentUser.groupArray[StaticClass.indexOf].users.count
+    }
+         
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+           return 40
+    }
+         
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+           return 40
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
            let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
@@ -47,14 +57,14 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
              
            let lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 40))
            lbl.font = UIFont.systemFont(ofSize: 20)
-        lbl.text = StaticClass.groupArray[StaticClass.indexOf].users[section].username
+        lbl.text = StaticClass.currentUser.groupArray[StaticClass.indexOf].users[section].username
            view.addSubview(lbl)
            return view
          }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        cell.textLabel?.text = StaticClass.groupArray[StaticClass.indexOf].users[indexPath.section].itemArray[indexPath.row].name
+        cell.textLabel?.text = StaticClass.currentUser.groupArray[StaticClass.indexOf].users[indexPath.section].itemArray[indexPath.row].name
         return cell
     }
     
@@ -62,7 +72,7 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     @IBAction func editAction(_ sender: UIButton) {
-        StaticClass.groupArray[StaticClass.indexOf].users.append(User(u: "default \(fosho)", p: "default", i: UIImage(named: "defaultUser")!))
+        StaticClass.currentUser.groupArray[StaticClass.indexOf].users.append(User(u: "default \(fosho)", p: "default", i: UIImage(named: "defaultUser")!))
         fosho += 1
         tableViewOutlet.reloadData()
 //        performSegue(withIdentifier: "editToAdd", sender: nil)

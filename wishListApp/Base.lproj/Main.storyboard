@@ -214,6 +214,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Sign In">
                                     <fontDescription key="titleFontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="18"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="signInAction:" destination="NCU-Me-0Nk" eventType="touchUpInside" id="o0T-Eq-p3f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q0G-6M-dtT"/>
@@ -311,7 +314,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nqd-pl-sf3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.87635949290000004" green="0.93710728119999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Tkl-RI-Pq9" firstAttribute="top" secondItem="zep-gM-XoG" secondAttribute="bottom" constant="1" id="5DW-g0-SBy"/>
                             <constraint firstItem="Nqd-pl-sf3" firstAttribute="trailing" secondItem="Tkl-RI-Pq9" secondAttribute="trailing" constant="16" id="GHj-Qk-RIY"/>
@@ -537,10 +540,10 @@
     </scenes>
     <resources>
         <image name="defaultUser" width="400" height="400"/>
-        <image name="person.2.fill" catalog="system" width="128" height="80"/>
+        <image name="person.2.fill" catalog="system" width="32" height="32"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="photo" catalog="system" width="128" height="93"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus" catalog="system" width="32" height="32"/>
         <image name="rectangle.and.pencil.and.ellipsis" catalog="system" width="128" height="81"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

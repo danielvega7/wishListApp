@@ -63,8 +63,8 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         StaticClass.indexOf = indexPath.row
-        StaticClass.groupArray[StaticClass.indexOf].add()
-        StaticClass.groupArray[StaticClass.indexOf].add()
+//        StaticClass.groupArray[StaticClass.indexOf].add()
+//        StaticClass.groupArray[StaticClass.indexOf].add()
         performSegue(withIdentifier: "userToList", sender: nil)
         
     }

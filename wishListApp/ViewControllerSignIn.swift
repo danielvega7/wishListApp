@@ -126,6 +126,19 @@ class ViewControllerSignIn: UIViewController {
         
     }
     
+    @IBAction func signInAction(_ sender: UIButton) {
+        if let name = usernameTextField.text {
+            if let password = passwordTextField.text {
+                StaticClass.currentUser = User(u: name, p: password, i: UIImage(named: "defaultUser")!)
+            }
+            else{
+                
+            }
+        }
+        else {
+            
+        }
+    }
     
     
     
