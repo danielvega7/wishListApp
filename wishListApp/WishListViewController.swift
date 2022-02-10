@@ -8,8 +8,14 @@
 import UIKit
 
 class WishListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    @IBOutlet var longPressGestureRecognizerOnTableView: UILongPressGestureRecognizer!
+    
  
     var fosho = 0
+    
+    var whichClicked = -1;
 
     @IBOutlet weak var userLabelOutlet: UILabel!
     @IBOutlet weak var tableViewOutlet: UITableView!
@@ -77,6 +83,37 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
         tableViewOutlet.reloadData()
 //        performSegue(withIdentifier: "editToAdd", sender: nil)
     }
+    
+    
+    
+    @IBAction func longPressGestureRecognizerOnTableViewAction(_ sender: UILongPressGestureRecognizer) {
+        
+        if sender.state == .began {
+            
+            let touchPoint = sender.location(in: tableViewOutlet)
+            
+            if let indexPath = tableViewOutlet.indexPathForRow(at: touchPoint) {
+                
+                whichClicked = indexPath.row
+               
+            }
+            
+            let alertController = UIAlertController(title: "Options", message: nil, preferredStyle: .alert)
+            
+            let copyAction = UIAlertAction(title: "Copy Item", style: .cancel, handler: nil)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alertController.addAction(copyAction)
+            alertController.addAction(cancelAction)
+            
+            // Fatal error for alert controller
+            
+            
+        }
+        
+    }
+    
     
 
 }
