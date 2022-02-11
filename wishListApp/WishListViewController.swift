@@ -77,10 +77,58 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-    @IBAction func editAction(_ sender: UIButton) {
-        StaticClass.currentUser.groupArray[StaticClass.indexOf].users.append(User(u: "default \(fosho)", p: "default", i: UIImage(named: "defaultUser")!))
-        fosho += 1
+    
+    func presentAlertController(){
+        
+            
+                let alertController = UIAlertController(title: "Add Group Member",
+                                                        message: nil,
+                                                        preferredStyle: .alert)
+                alertController.addTextField { (textField) in
+                    textField.placeholder = "Member Name"
+                    
+                    
+                }
+    //        alertController.addTextField { (textField) in
+    //            textField.placeholder = "Password"
+    //
+    //
+    //        }
+               
+                let addGroupAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
+                    if let memberName = textFields[0].text {
+                        
+                        StaticClass.currentUser.groupArray[StaticClass.indexOf].users.append(User(u: memberName, p: "default", i: UIImage(named: "defaultUser")!))
+    //                        let encoder = JSONEncoder()
+    //
+    //                        if let encoded = try? encoder.encode(StaticClass.userArray) {
+    //
+    //                            UserDefaults.standard.set(encoded, forKey: "users")
+    //
+    //                        }
+                        
+                                                       
+                                                        
+                    }
+                    
+                    
+                    self.tableViewOutlet.reloadData()
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alertController.addAction(cancelAction)
+                alertController.addAction(addGroupAction)
+                
+                self.present(alertController,
+                             animated: true)
+               
+            }
+    
+    @IBAction func addUserAction(_ sender: UIButton) {
+        presentAlertController()
         tableViewOutlet.reloadData()
+    }
+    @IBAction func editAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "editToAdd", sender: nil)
 //        performSegue(withIdentifier: "editToAdd", sender: nil)
     }
     
