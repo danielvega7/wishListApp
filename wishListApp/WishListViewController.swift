@@ -145,18 +145,19 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
             if let indexPath = tableViewOutlet.indexPathForRow(at: touchPoint) {
                 
                 whichClicked = indexPath.row
+                
+                let alertController = UIAlertController(title: "Options", message: nil, preferredStyle: .alert)
+                
+                let copyAction = UIAlertAction(title: "Copy Item", style: .default, handler: nil)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                alertController.addAction(copyAction)
+                alertController.addAction(cancelAction)
+                self.present(alertController, animated: true)
                
             }
-            
-            let alertController = UIAlertController(title: "Options", message: nil, preferredStyle: .alert)
-            
-            let copyAction = UIAlertAction(title: "Copy Item", style: .cancel, handler: nil)
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            alertController.addAction(copyAction)
-            alertController.addAction(cancelAction)
-            
+         
             // Fatal error for alert controller
             
             
