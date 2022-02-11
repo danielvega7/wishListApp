@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var logInButton: UIBarButtonItem!
     
     @IBOutlet weak var logInButtonSegment: UIButton!
+    @IBOutlet weak var usernameUser: UILabel!
     
     
     
@@ -39,6 +40,13 @@ class ViewController: UIViewController {
         logInButtonSegment.backgroundColor = UIColor(patternImage: UIImage(named: "logInBackgroundColor")!)
         logInButtonSegment.layer.cornerRadius = 20
         
+        if StaticClass.currentUser.username != "default" {
+            usernameUser.text = StaticClass.currentUser.username
+        }
+        else{
+            usernameUser.text = ""
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -47,6 +55,7 @@ class ViewController: UIViewController {
         
       
     }
+    
     
     
     @IBAction func createAGroupButtonAction(_ sender: UIButton) {
