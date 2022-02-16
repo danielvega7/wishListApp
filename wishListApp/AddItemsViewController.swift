@@ -10,6 +10,7 @@ import UIKit
 class AddItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
+    var selectedCellsArray : [Bool] = []
 
     @IBOutlet weak var tableViewOultet: UITableView!
     
@@ -66,6 +67,7 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
                 if let itemName = textFields[0].text {
                     if let link = textFields[1].text{
                         StaticClass.currentUser.itemArray.append(Items(n: itemName, l: link))
+                        self.selectedCellsArray.append(false)
 //                        let encoder = JSONEncoder()
 //
 //                        if let encoded = try? encoder.encode(StaticClass.userArray) {
@@ -89,4 +91,24 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
                          animated: true)
            
         }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        let cell = tableViewOultet.cellForRow(at: indexPath)
+        
+        if(selectedCellsArray[indexPath.row] == false) {            cell!.backgroundColor = UIColor(red: 0, green: 0.7373, blue: 0.7882, alpha: 1)
+            selectedCellsArray[indexPath.row] = true
+        }
+        else {
+            cell!.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            selectedCellsArray[indexPath.row] = false
+        }
+        
+    }
+        
+    
+    
+    
 }
