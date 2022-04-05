@@ -22,11 +22,13 @@ class ViewControllerSignIn: UIViewController {
     
     // added 
     
-    @IBOutlet var firstImageViewTapGestureRecognizer: UITapGestureRecognizer!
-    
-    @IBOutlet var secondImageViewTapGestureRecognizer: UITapGestureRecognizer!
-    
+
     var which = 0
+    
+    @IBOutlet var firstTapGestureRecognizer: UITapGestureRecognizer!
+    
+    @IBOutlet var secondTapGestureRecognizer: UITapGestureRecognizer!
+    
     
     
     @IBOutlet weak var usernameTextField: UITextField!
@@ -36,7 +38,11 @@ class ViewControllerSignIn: UIViewController {
     
     @IBOutlet weak var signInSignUpButton: UIButton!
     
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    
+    
+    @IBOutlet weak var passwordsDoNotMatchLabel: UILabel!
     
     
     
@@ -69,62 +75,28 @@ class ViewControllerSignIn: UIViewController {
     
     
     @IBAction func firstButtonAction(_ sender: UIButton) {
-        which = 1
-        firstButton.titleLabel?.textColor = UIColor.orange
-        secondButton.titleLabel?.textColor = UIColor.lightGray
-        
-        firstImageView.backgroundColor = UIColor.orange
-        secondImageView.backgroundColor = UIColor.lightGray
-        
-        signInSignUpButton.titleLabel?.text = "Sign In"
-        
-        labelUnderHello.text = "Sign In to Your Account"
-        
+        signInClicked()
     }
     
     
     @IBAction func secondButtonAction(_ sender: UIButton) {
-        which = 2
-        firstButton.titleLabel?.textColor = UIColor.lightGray
-        secondButton.titleLabel?.textColor = UIColor.orange
-        
-        firstImageView.backgroundColor = UIColor.lightGray
-        secondImageView.backgroundColor = UIColor.orange
-        
-        signInSignUpButton.titleLabel?.text = ""
-        signInSignUpButton.titleLabel?.text = "Sign Up"
-        labelUnderHello.text = "Sign Up to Create Your Account"
-        
+        signUpClicked()
     }
     
     
-    @IBAction func firstImageViewTapGestureRecognizerAction(_ sender: UITapGestureRecognizer) {
-        
-        firstButton.titleLabel?.textColor = UIColor.orange
-        secondButton.titleLabel?.textColor = UIColor.lightGray
-        
-        firstImageView.backgroundColor = UIColor.orange
-        secondImageView.backgroundColor = UIColor.lightGray
-        
-        signInSignUpButton.titleLabel?.text = "Sign In"
-        
-        labelUnderHello.text = "Sign In to Your Account"
-        
+    @IBAction func firstTapGestureRecognizerAction(_ sender: UITapGestureRecognizer) {
+        signInClicked()
     }
     
-    @IBAction func secondImageViewTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
-        
-        firstButton.titleLabel?.textColor = UIColor.lightGray
-        secondButton.titleLabel?.textColor = UIColor.orange
-        
-        firstImageView.backgroundColor = UIColor.lightGray
-        secondImageView.backgroundColor = UIColor.orange
-        
-        signInSignUpButton.titleLabel?.text = "Sign Up"
-        
-        labelUnderHello.text = "Sign Up to Create Your Account"
-        
+    
+    @IBAction func secondTapGestureRecognizerAction(_ sender: UITapGestureRecognizer) {
+        signUpClicked()
     }
+    
+    
+    
+    
+    
     
     @IBAction func signInAction(_ sender: UIButton) {
         var isValid = false
@@ -204,7 +176,85 @@ class ViewControllerSignIn: UIViewController {
         }
     }
     
+
     
+    @IBAction func passwordTextFieldAction(_ sender: UITextField) {
+        print("happens")
+        if (confirmPasswordTextField.isHidden == false && confirmPasswordTextField.text != passwordTextField.text) {
+            passwordsDifferent()
+        }
+        else {
+            passwordsMatch()
+        }
+    }
+    
+    @IBAction func confirmPasswordsTextFieldAction(_ sender: UITextField) {
+        print("happens")
+        if (confirmPasswordTextField.isHidden == false && confirmPasswordTextField.text != passwordTextField.text) {
+            passwordsDifferent()
+        }
+        else {
+            passwordsMatch()
+        }
+    }
+    
+    
+    
+    
+    
+    func signInClicked() {
+        which = 1
+        firstButton.titleLabel?.textColor = UIColor.orange
+        secondButton.titleLabel?.textColor = UIColor.lightGray
+        
+        firstImageView.backgroundColor = UIColor.orange
+        secondImageView.backgroundColor = UIColor.lightGray
+        
+        signInSignUpButton.titleLabel?.text = "Sign In"
+        
+        labelUnderHello.text = "Sign In to Your Account"
+        
+        confirmPasswordTextField.isHidden = true
+    }
+    
+    
+    func signUpClicked() {
+        which = 2
+        firstButton.titleLabel?.textColor = UIColor.lightGray
+        secondButton.titleLabel?.textColor = UIColor.orange
+        
+        firstImageView.backgroundColor = UIColor.lightGray
+        secondImageView.backgroundColor = UIColor.orange
+        
+        //signInSignUpButton.titleLabel?.text = ""
+        signInSignUpButton.titleLabel?.text = "Sign Up"
+        labelUnderHello.text = "Sign Up to Create Your Account"
+        
+        confirmPasswordTextField.isHidden = false
+    }
+    
+    
+    func passwordsDifferent() {
+        
+        confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+        confirmPasswordTextField.layer.borderWidth = 2
+        
+        passwordsDoNotMatchLabel.isHidden = false
+        
+        signInSignUpButton.isEnabled = false
+        
+    }
+    
+    func passwordsMatch() {
+        
+
+        confirmPasswordTextField.layer.borderWidth = 0
+        
+        passwordsDoNotMatchLabel.isHidden = true
+        
+        signInSignUpButton.isEnabled = true
+        
+    }
     
     
     

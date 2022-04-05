@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eCF-uh-sHC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eCF-uh-sHC">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -156,17 +156,18 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="4" id="gwy-WM-vse"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="kC9-yI-vrn" appends="YES" id="nPp-NE-SDQ"/>
-                                                </connections>
                                             </imageView>
                                         </subviews>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="0Wl-i1-cQy" firstAttribute="leading" secondItem="pol-cp-Gjd" secondAttribute="leading" id="EdH-x3-jku"/>
                                             <constraint firstItem="0Wl-i1-cQy" firstAttribute="top" secondItem="Zwc-M5-h9Q" secondAttribute="bottom" id="bWY-k2-9VW"/>
                                             <constraint firstAttribute="bottom" secondItem="0Wl-i1-cQy" secondAttribute="bottom" id="nZI-aU-6mp"/>
                                             <constraint firstAttribute="trailing" secondItem="0Wl-i1-cQy" secondAttribute="trailing" id="uLz-rZ-Pvw"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="k1O-07-K7S" appends="YES" id="uol-Rr-tPG"/>
+                                        </connections>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mHK-t7-jnT">
                                         <rect key="frame" x="195" y="0.0" width="195" height="50.666666666666664"/>
@@ -189,34 +190,47 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="4" id="O7h-gN-74F"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="zEC-mR-y3U" appends="YES" id="Ic6-CI-SDQ"/>
-                                                </connections>
                                             </imageView>
                                         </subviews>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="5PU-O9-2Wh" secondAttribute="trailing" id="WSv-n8-Xg5"/>
                                             <constraint firstAttribute="bottom" secondItem="5PU-O9-2Wh" secondAttribute="bottom" id="ckT-rW-njy"/>
                                             <constraint firstItem="5PU-O9-2Wh" firstAttribute="leading" secondItem="mHK-t7-jnT" secondAttribute="leading" id="cvV-mv-pMY"/>
                                             <constraint firstItem="5PU-O9-2Wh" firstAttribute="top" secondItem="W15-uH-OD5" secondAttribute="bottom" id="iQv-2X-6Hn"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="cys-FJ-LI2" appends="YES" id="Iz9-NS-FsD"/>
+                                        </connections>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-Yw-4xk">
-                                <rect key="frame" x="50" y="472" width="295" height="34"/>
+                                <rect key="frame" x="47" y="431" width="295" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dth-6a-tTU">
-                                <rect key="frame" x="50" y="564" width="295" height="34"/>
+                                <rect key="frame" x="47" y="523" width="295" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="passwordTextFieldAction:" destination="NCU-Me-0Nk" eventType="editingChanged" id="tUt-AY-9Zf"/>
+                                </connections>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ac-2R-CUv">
+                                <rect key="frame" x="47" y="611" width="295" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="confirmPasswordsTextFieldAction:" destination="NCU-Me-0Nk" eventType="editingChanged" id="BHg-pY-0S6"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e62-Xc-nMb">
-                                <rect key="frame" x="229" y="694" width="100" height="54"/>
+                                <rect key="frame" x="145" y="693" width="100" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign In">
@@ -226,6 +240,13 @@
                                     <action selector="signInAction:" destination="NCU-Me-0Nk" eventType="touchUpInside" id="o0T-Eq-p3f"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⛔️ Passwords do not match" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR8-6z-LRM">
+                                <rect key="frame" x="50" y="594" width="172" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q0G-6M-dtT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -244,27 +265,29 @@
                     </view>
                     <navigationItem key="navigationItem" id="MlP-Ef-BZH"/>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="9ac-2R-CUv" id="dKV-Vg-xo1"/>
                         <outlet property="firstButton" destination="Zwc-M5-h9Q" id="Q8C-oa-uwN"/>
                         <outlet property="firstImageView" destination="0Wl-i1-cQy" id="ngz-MH-aau"/>
-                        <outlet property="firstImageViewTapGestureRecognizer" destination="kC9-yI-vrn" id="JV7-zv-If5"/>
+                        <outlet property="firstTapGestureRecognizer" destination="k1O-07-K7S" id="psR-FA-udt"/>
                         <outlet property="labelUnderHello" destination="FFk-PZ-cnh" id="tte-cZ-iYe"/>
                         <outlet property="passwordTextField" destination="Dth-6a-tTU" id="oES-qE-AqI"/>
+                        <outlet property="passwordsDoNotMatchLabel" destination="aR8-6z-LRM" id="8jc-1N-qem"/>
                         <outlet property="secondButton" destination="W15-uH-OD5" id="PqT-0r-R1A"/>
                         <outlet property="secondImageView" destination="5PU-O9-2Wh" id="jxD-de-EyM"/>
-                        <outlet property="secondImageViewTapGestureRecognizer" destination="zEC-mR-y3U" id="DIs-Wl-5I7"/>
+                        <outlet property="secondTapGestureRecognizer" destination="cys-FJ-LI2" id="wWz-Jh-E8q"/>
                         <outlet property="signInSignUpButton" destination="e62-Xc-nMb" id="79X-Q5-oWP"/>
                         <outlet property="usernameTextField" destination="gOo-Yw-4xk" id="cJf-fR-28G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oij-KF-baT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="kC9-yI-vrn">
+                <tapGestureRecognizer id="k1O-07-K7S">
                     <connections>
-                        <action selector="firstImageViewTapGestureRecognizerAction:" destination="NCU-Me-0Nk" id="Arb-GU-KqZ"/>
+                        <action selector="firstTapGestureRecognizerAction:" destination="NCU-Me-0Nk" id="a1V-9f-VAG"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="zEC-mR-y3U">
+                <tapGestureRecognizer id="cys-FJ-LI2">
                     <connections>
-                        <action selector="secondImageViewTapGestureRecognizer:" destination="NCU-Me-0Nk" id="hLD-gA-oAr"/>
+                        <action selector="secondTapGestureRecognizerAction:" destination="NCU-Me-0Nk" id="TK1-ol-bAK"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
