@@ -20,6 +20,7 @@
 		11497CB8278890EF00DB227C /* collectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11497CB7278890EF00DB227C /* collectionViewController.swift */; };
 		11497CBA2788919B00DB227C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11497CB92788919B00DB227C /* CustomCell.swift */; };
 		11D9B9E32799B581003251CF /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9B9E22799B581003251CF /* AddItemsViewController.swift */; };
+		854EEF7927FDDE1E00050C50 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854EEF7827FDDE1E00050C50 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		11497CB7278890EF00DB227C /* collectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionViewController.swift; sourceTree = "<group>"; };
 		11497CB92788919B00DB227C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		11D9B9E22799B581003251CF /* AddItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
+		854EEF7827FDDE1E00050C50 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				11434D522785F0A80023CBAB /* SceneDelegate.swift */,
 				11434D542785F0A80023CBAB /* ViewController.swift */,
 				11434D562785F0A80023CBAB /* Main.storyboard */,
+				854EEF7827FDDE1E00050C50 /* WebViewController.swift */,
 				06E9489727A5C2C100AC50C0 /* ViewControllerSignIn.swift */,
 				11D9B9E22799B581003251CF /* AddItemsViewController.swift */,
 				06738CF327909658003C8D8A /* WishListViewController.swift */,
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11434D5B2785F0A80023CBAB /* wishListApp.xcdatamodeld in Sources */,
+				854EEF7927FDDE1E00050C50 /* WebViewController.swift in Sources */,
 				11497CB8278890EF00DB227C /* collectionViewController.swift in Sources */,
 				06738CF22788F24B003C8D8A /* User Class.swift in Sources */,
 				11434D552785F0A80023CBAB /* ViewController.swift in Sources */,

@@ -13,6 +13,7 @@ class ViewControllerSignIn: UIViewController {
     
     @IBOutlet weak var secondButton: UIButton!
     
+    var matchPasswords = true
     
     @IBOutlet weak var firstImageView: UIImageView!
     
@@ -180,20 +181,28 @@ class ViewControllerSignIn: UIViewController {
     
     @IBAction func passwordTextFieldAction(_ sender: UITextField) {
         print("happens")
-        if (confirmPasswordTextField.isHidden == false && confirmPasswordTextField.text != passwordTextField.text) {
-            passwordsDifferent()
+        if (confirmPasswordTextField.text != passwordTextField.text) {
+            matchPasswords = false
+            if (confirmPasswordTextField.isHidden == false) {
+                passwordsDifferent()
+            }
         }
         else {
-            passwordsMatch()
+            matchPasswords = true
+            if (confirmPasswordTextField.isHidden == false) {
+                passwordsMatch()
+            }
         }
     }
     
     @IBAction func confirmPasswordsTextFieldAction(_ sender: UITextField) {
         print("happens")
-        if (confirmPasswordTextField.isHidden == false && confirmPasswordTextField.text != passwordTextField.text) {
+        if (confirmPasswordTextField.text != passwordTextField.text) {
+            matchPasswords = false
             passwordsDifferent()
         }
         else {
+            matchPasswords = true
             passwordsMatch()
         }
     }
@@ -210,11 +219,14 @@ class ViewControllerSignIn: UIViewController {
         firstImageView.backgroundColor = UIColor.orange
         secondImageView.backgroundColor = UIColor.lightGray
         
-        signInSignUpButton.titleLabel?.text = "Sign In"
+        signInSignUpButton.setTitle("Sign In", for: .normal)
+        signInSignUpButton.setTitleColor(UIColor.white, for: .normal)
+        
         
         labelUnderHello.text = "Sign In to Your Account"
         
         confirmPasswordTextField.isHidden = true
+        passwordsDoNotMatchLabel.isHidden = true
     }
     
     
@@ -226,15 +238,23 @@ class ViewControllerSignIn: UIViewController {
         firstImageView.backgroundColor = UIColor.lightGray
         secondImageView.backgroundColor = UIColor.orange
         
-        //signInSignUpButton.titleLabel?.text = ""
-        signInSignUpButton.titleLabel?.text = "Sign Up"
+        signInSignUpButton.setTitle("Sign Up", for: .normal)
+        signInSignUpButton.setTitleColor(UIColor.white, for: .normal)
+        
+        
         labelUnderHello.text = "Sign Up to Create Your Account"
         
         confirmPasswordTextField.isHidden = false
+        
+        if (matchPasswords == false) {
+            passwordsDifferent()
+        }
+        
     }
     
     
     func passwordsDifferent() {
+        
         
         confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
         confirmPasswordTextField.layer.borderWidth = 2
