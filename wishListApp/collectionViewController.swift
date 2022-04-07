@@ -7,6 +7,7 @@
 
 import UIKit
 //import DropDown
+//sexy
 
 public class StaticClass: Codable{
     static var groupArray = [Groups]()
