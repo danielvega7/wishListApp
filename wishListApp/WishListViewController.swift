@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class WishListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     

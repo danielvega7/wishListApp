@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class ViewControllerSignIn: UIViewController {
     
     @IBOutlet weak var firstButton: UIButton!
