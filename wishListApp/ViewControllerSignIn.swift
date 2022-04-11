@@ -9,6 +9,9 @@ import UIKit
 import Firebase
 class ViewControllerSignIn: UIViewController {
     
+    let db = Firestore.firestore()
+    //var ref = Database.database().reference()
+    
     @IBOutlet weak var firstButton: UIButton!
     
     @IBOutlet weak var secondButton: UIButton!
@@ -120,6 +123,7 @@ class ViewControllerSignIn: UIViewController {
                     
                     if isValid {
                         StaticClass.currentUser = StaticClass.userArray[index]
+                        performSegue(withIdentifier: "toViewController", sender: nil)
                     }
                     else {
                         let unotfoundController = UIAlertController(title: "User Not Found", message: nil, preferredStyle: .alert)

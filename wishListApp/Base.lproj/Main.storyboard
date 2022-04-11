@@ -93,6 +93,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="logInButtonSegmentAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y7y-UG-STS"/>
+                                    <action selector="unwind:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dUg-jF-93d"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -105,9 +106,11 @@
                         <outlet property="logInButtonSegment" destination="1Jf-3K-m1R" id="Mw7-vR-Cav"/>
                         <outlet property="usernameUser" destination="pMb-cg-37x" id="0bU-sa-vQv"/>
                         <segue destination="RSQ-Aa-DD8" kind="show" identifier="toCollectionViewController" id="9qH-UY-rVP"/>
+                        <segue destination="Uih-N5-Iwa" kind="unwind" unwindAction="unwind:" id="Uro-Km-Ewl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Uih-N5-Iwa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1717" y="68"/>
         </scene>

@@ -7,8 +7,12 @@
 
 import UIKit
 import Firebase
+
 class ViewController: UIViewController {
 
+    let db = Firestore.firestore()
+    
+    
     
     @IBOutlet weak var createAGroupButton: UIButton!
     
@@ -42,6 +46,7 @@ class ViewController: UIViewController {
         
         if StaticClass.currentUser.username != "default" {
             usernameUser.text = StaticClass.currentUser.username
+            logInButton.title = "Logout"
         }
         else{
             usernameUser.text = ""
@@ -75,10 +80,13 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "toCollectionViewController", sender: nil)
     }
     
-    
-    @IBAction func logInButtonSegmentAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "toLogInViewController", sender: nil)
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+        performSegue(withIdentifier: "unwind", sender: self)
     }
+    
+    //    @IBAction func logInButtonSegmentAction(_ sender: UIButton) {
+//        performSegue(withIdentifier: "toViewController", sender: nil)
+//    }
     
     
     
