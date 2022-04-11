@@ -11,7 +11,7 @@ import Firebase
 class ViewController: UIViewController {
 
     let db = Firestore.firestore()
-    
+    //var ref = Database.database().reference()
     
     
     @IBOutlet weak var createAGroupButton: UIButton!
@@ -80,9 +80,7 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "toCollectionViewController", sender: nil)
     }
     
-    @IBAction func unwind( _ seg: UIStoryboardSegue) {
-        performSegue(withIdentifier: "unwind", sender: self)
-    }
+   
     
     //    @IBAction func logInButtonSegmentAction(_ sender: UIButton) {
 //        performSegue(withIdentifier: "toViewController", sender: nil)
