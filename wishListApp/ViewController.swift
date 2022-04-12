@@ -46,7 +46,8 @@ class ViewController: UIViewController {
         
         if StaticClass.currentUser.username != "default" {
             usernameUser.text = StaticClass.currentUser.username
-            logInButton.title = "Logout"
+            logInButton.title = "ur mom"
+            //logInButton.setTitle("Logout", for: .normal)
         }
         else{
             usernameUser.text = ""
