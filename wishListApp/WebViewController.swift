@@ -13,7 +13,6 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     
-    // hello
 
     override func viewDidLoad() {
         super.viewDidLoad()
