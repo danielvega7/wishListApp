@@ -155,6 +155,7 @@ class ViewControllerSignIn: UIViewController {
                             }
                             j += 1
                         }
+                        performSegue(withIdentifier: "toViewController", sender: nil)
                        
                     }
                     else {

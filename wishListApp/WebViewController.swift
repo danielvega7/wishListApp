@@ -7,13 +7,13 @@
 
 import UIKit
 import WebKit
-import Firebase
+//please for avnish
+
 class WebViewController: UIViewController, WKNavigationDelegate {
     
     
     @IBOutlet weak var webView: WKWebView!
     
-    // hello
 
     override func viewDidLoad() {
         super.viewDidLoad()

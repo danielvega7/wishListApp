@@ -49,7 +49,7 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func presentAlertController(){
         
-            let alertController = UIAlertController(title: "Add User",
+            let alertController = UIAlertController(title: "Add Item",
                                                     message: nil,
                                                     preferredStyle: .alert)
             alertController.addTextField { (textField) in
