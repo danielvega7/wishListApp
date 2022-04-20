@@ -341,7 +341,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crq-y4-EEx">
                                         <rect key="frame" x="182.66666666666663" y="0.0" width="177.33333333333337" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Edit My List"/>
                                         <connections>
                                             <action selector="editAction:" destination="hdp-s6-VDY" eventType="touchUpInside" id="eRs-9J-Zln"/>
                                         </connections>
