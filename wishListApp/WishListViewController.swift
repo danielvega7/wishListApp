@@ -12,7 +12,8 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet var longPressGestureRecognizerOnTableView: UILongPressGestureRecognizer!
     
- 
+    let db = Firestore.firestore()
+    
     var fosho = 0
     
     var whichClicked = -1;
@@ -164,7 +165,11 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
-    
+    func write() {
+       
+        db.collection("wishlist").document("withlist").setData(["users": StaticClass.groupArray], merge: true)
+
+    }
     
 
 }
