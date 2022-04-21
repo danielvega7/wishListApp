@@ -32,6 +32,8 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         cell.textLabel?.text = StaticClass.currentUser.itemArray[indexPath.row].name
+        cell.detailTextLabel?.text = StaticClass.currentUser.itemArray[indexPath.row].link
+        
         return cell
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

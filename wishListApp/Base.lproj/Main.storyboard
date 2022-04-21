@@ -388,7 +388,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2504.6153846153848" y="-611.37440758293837"/>
+            <point key="canvasLocation" x="2648" y="-643"/>
         </scene>
         <!--Add Items View Controller-->
         <scene sceneID="Ny1-IN-Cik">
@@ -471,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCQ-wz-cih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3427.6923076923076" y="-611.37440758293837"/>
+            <point key="canvasLocation" x="3517" y="-1352"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="GYz-Ix-wAl">
@@ -506,7 +506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fry-w5-hbF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4420" y="-611"/>
+            <point key="canvasLocation" x="3517" y="-2108"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="xpb-wG-nIW">
