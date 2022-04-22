@@ -12,7 +12,7 @@ public class StaticClass: Codable{
     static var groupArray = [Groups]()
     static var indexOf = 0
     static var userArray = [User]()
-    static var currentUser = User(u: "default", p: "default", i: UIImage(named: "defaultUser")!)
+    static var currentUser = User(u: "default", p: "default", i: "defaultUser")
     static var imagePicker = UIImagePickerController()
     static var alertController = UIAlertController()
     
@@ -89,7 +89,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
             let addGroupAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
                 if let groupName = textFields[0].text {
                     
-                    StaticClass.currentUser.groupArray.append(Groups(gn: groupName, gi: UIImage(named: "defaultUser")!))
+                    StaticClass.currentUser.groupArray.append(Groups(gn: groupName, gi: "defaultUser"))
 //                        let encoder = JSONEncoder()
 //
 //                        if let encoded = try? encoder.encode(StaticClass.userArray) {
@@ -163,8 +163,13 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     
 }
     //image picker function
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {  picker.dismiss(animated: true) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+       // var temp: UIImage
+        picker.dismiss(animated: true) {
         StaticClass.currentUser.groupArray[self.whichClicked].groupImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
+            
+            
+            
         self.collectionViewOutlet.reloadData()
     }
     }

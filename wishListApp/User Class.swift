@@ -19,13 +19,13 @@ public class Items: Codable{
 public class User: Codable{
     var username: String
     var password: String
-    var userImage: UIImage
+    var userImageString: Data
     var itemArray:[Items]
     var groupArray:[Groups]
-    init(u: String, p: String, i: UIImage) {
+    init(u: String, p: String, i: String) {
         username = u
         password = p
-        userImage = i
+        userImageString = i
         itemArray = [Items]()
         groupArray = [Groups]()
     }
@@ -35,11 +35,12 @@ public class Groups: Codable{
     var groupName: String
     var users = [User]()
     func add() {
-        users.append(User(u: "default", p: "default", i: UIImage(named: "defaultUser")!))
+        users.append(User(u: "default", p: "default", i: "defaultUser"))
     }
-    var groupImage: UIImage
-    init(gn: String, gi: UIImage){
+    var groupImage: String
+    init(gn: String, gi: String){
         groupName = gn
         groupImage = gi
     }
 }
+

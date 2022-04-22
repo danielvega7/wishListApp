@@ -23,8 +23,8 @@ public class CustomCell: UICollectionViewCell, UIImagePickerControllerDelegate {
         textLabelOutlet.text = t
         
     }
-    func imageChange(i: UIImage) {
-        imageOutlet.image = i
+    func imageChange(i: String) {
+        imageOutlet.image = UIImage(named: i)
     }
     func setAction(a: UIButton) {
         changePhotoButton = a
