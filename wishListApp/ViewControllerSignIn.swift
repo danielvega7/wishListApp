@@ -26,7 +26,7 @@ class ViewControllerSignIn: UIViewController {
     
     // added 
     
-
+//bruh
     var which = 0
     
     @IBOutlet var firstTapGestureRecognizer: UITapGestureRecognizer!

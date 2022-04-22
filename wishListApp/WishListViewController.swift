@@ -12,7 +12,8 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet var longPressGestureRecognizerOnTableView: UILongPressGestureRecognizer!
     
- 
+    let db = Firestore.firestore()
+    
     var fosho = 0
     
     var whichClicked = -1;
@@ -46,15 +47,18 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
+        print("number of sections happened")
         return StaticClass.currentUser.groupArray[StaticClass.indexOf].users.count
     }
          
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        print("height for section header happened")
            return 40
     }
          
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print("height for row table view happened")
            return 40
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -65,12 +69,14 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
            lbl.font = UIFont.systemFont(ofSize: 20)
         lbl.text = StaticClass.currentUser.groupArray[StaticClass.indexOf].users[section].username
            view.addSubview(lbl)
+        print("section happened")
            return view
          }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         cell.textLabel?.text = StaticClass.currentUser.groupArray[StaticClass.indexOf].users[indexPath.section].itemArray[indexPath.row].name
+        print("cell happened")
         return cell
     }
     
@@ -164,7 +170,11 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
-    
+    func write() {
+       
+        db.collection("wishlist").document("withlist").setData(["users": StaticClass.groupArray], merge: true)
+
+    }
     
 
 }
