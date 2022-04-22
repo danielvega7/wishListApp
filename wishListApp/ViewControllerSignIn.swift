@@ -285,7 +285,11 @@ class ViewControllerSignIn: UIViewController {
         //performSegue(withIdentifier: "unwind", sender: self)
     }
     
-    //yurt
-    
+    //firebase
+    func writeUserArray() {
+       
+        db.collection("wishlist").document("wishlist").setData(["userArray": StaticClass.groupArray], merge: true)
+
+    }
     
 }
