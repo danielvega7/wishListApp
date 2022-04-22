@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class Items{
+public class Items: Codable{
     var name: String
     var link: String
     init(n: String, l: String){
@@ -16,20 +16,22 @@ public class Items{
         link = l
     }
 }
-public class User{
+public class User: Codable{
     var username: String
     var password: String
     var userImage: UIImage
-    var itemArray = [Items]()
-    var groupArray = [Groups]()
+    var itemArray:[Items]
+    var groupArray:[Groups]
     init(u: String, p: String, i: UIImage) {
         username = u
         password = p
         userImage = i
+        itemArray = [Items]()
+        groupArray = [Groups]()
     }
     
 }
-public class Groups{
+public class Groups: Codable{
     var groupName: String
     var users = [User]()
     func add() {
