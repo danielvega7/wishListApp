@@ -7,6 +7,16 @@
 
 import UIKit
 import Firebase
+
+class AddItemsTableViewCell : UITableViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var rightDetailButton: UIButton!
+    
+    
+}
+
+
 class AddItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
@@ -30,9 +40,12 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        cell.textLabel?.text = StaticClass.currentUser.itemArray[indexPath.row].name
-        cell.detailTextLabel?.text = StaticClass.currentUser.itemArray[indexPath.row].link
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! AddItemsTableViewCell
+        
+        cell.titleLabel?.text = StaticClass.currentUser.itemArray[indexPath.row].name
+        if (StaticClass.currentUser.itemArray[indexPath.row].link.count <= 20) {
+            cell.rightDetailButton?.setTitle(StaticClass.currentUser.itemArray[indexPath.row].link, for: .normal)
+        }
         
         return cell
     }

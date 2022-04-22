@@ -402,29 +402,38 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="Njl-fq-cv7" detailTextLabel="zan-mN-U2b" style="IBUITableViewCellStyleValue1" id="N8P-Bm-MFp">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="N8P-Bm-MFp" customClass="AddItemsTableViewCell" customModule="wishListApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="45.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N8P-Bm-MFp" id="Vpz-dL-EOl">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Njl-fq-cv7">
-                                                    <rect key="frame" x="20" y="15" width="25" height="14.333333333333334"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sl-X5-5X2">
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zan-mN-U2b">
-                                                    <rect key="frame" x="337.33333333333331" y="15" width="32.666666666666664" height="14.333333333333334"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8SU-bV-5Ms">
+                                                    <rect key="frame" x="319.33333333333331" y="5" width="50.666666666666686" height="33"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Link"/>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8SU-bV-5Ms" firstAttribute="centerY" secondItem="7sl-X5-5X2" secondAttribute="centerY" id="HIK-NR-fah"/>
+                                                <constraint firstItem="7sl-X5-5X2" firstAttribute="leading" secondItem="Vpz-dL-EOl" secondAttribute="leadingMargin" id="RaT-1m-o8t"/>
+                                                <constraint firstItem="7sl-X5-5X2" firstAttribute="top" secondItem="Vpz-dL-EOl" secondAttribute="topMargin" id="WGM-c9-O86"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8SU-bV-5Ms" secondAttribute="bottom" constant="-3.6666653951009067" id="dHS-5l-Pmr"/>
+                                                <constraint firstAttribute="trailing" secondItem="8SU-bV-5Ms" secondAttribute="trailing" constant="20" symbolic="YES" id="mUm-Dp-8iR"/>
+                                                <constraint firstItem="8SU-bV-5Ms" firstAttribute="top" secondItem="Vpz-dL-EOl" secondAttribute="topMargin" constant="-6" id="p0r-5s-hMJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="rightDetailButton" destination="8SU-bV-5Ms" id="NcY-rT-hLk"/>
+                                            <outlet property="titleLabel" destination="7sl-X5-5X2" id="Nh9-iv-67B"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
