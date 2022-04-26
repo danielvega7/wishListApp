@@ -104,7 +104,7 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
                 let addGroupAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
                     if let memberName = textFields[0].text {
                         
-                        StaticClass.currentUser.groupArray[StaticClass.indexOf].users.append(User(u: memberName, p: "default", i: UIImage(named: "defaultUser")!))
+                        StaticClass.currentUser.groupArray[StaticClass.indexOf].users.append(User(u: memberName, p: "default", i: "defaultUser"))
     //                        let encoder = JSONEncoder()
     //
     //                        if let encoded = try? encoder.encode(StaticClass.userArray) {

@@ -19,7 +19,7 @@ public class Items: Codable{
 public class User: Codable{
     var username: String
     var password: String
-    var userImageString: Data
+    var userImageString: String
     var itemArray:[Items]
     var groupArray:[Groups]
     init(u: String, p: String, i: String) {

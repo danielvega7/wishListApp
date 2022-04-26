@@ -166,7 +166,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
        // var temp: UIImage
         picker.dismiss(animated: true) {
-        StaticClass.currentUser.groupArray[self.whichClicked].groupImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
+        //StaticClass.currentUser.groupArray[self.whichClicked].groupImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
             
             
             

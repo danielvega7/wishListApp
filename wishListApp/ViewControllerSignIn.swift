@@ -146,7 +146,7 @@ class ViewControllerSignIn: UIViewController {
                     }
                     
                     if isValid {
-                        StaticClass.userArray.append(User(u: name, p: password, i: UIImage(named: "defaultUser")!))
+                        StaticClass.userArray.append(User(u: name, p: password, i: "defaultUser"))
                         var j = 0
                         while(j < StaticClass.userArray.count) {
                             if StaticClass.userArray[i].username == name {
