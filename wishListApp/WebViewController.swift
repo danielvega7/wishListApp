@@ -12,6 +12,8 @@ import WebKit
 
 class WebViewController: UIViewController, WKNavigationDelegate {
     
+    var stringLink = ""
+    
     
     @IBOutlet weak var webView: WKWebView!
     
@@ -21,7 +23,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         
         webView.navigationDelegate = self
         
-        let url = URL(string: "https://www.amazon.com")!
+        let url = URL(string: stringLink)!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
 

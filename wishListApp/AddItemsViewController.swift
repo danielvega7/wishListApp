@@ -21,6 +21,8 @@ class AddItemsTableViewCell : UITableViewCell {
 class AddItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
+    var selectedRow = 0
+    
     var selectedCellsArray : [Bool] = []
 
     @IBOutlet weak var tableViewOultet: UITableView!
@@ -47,6 +49,8 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
         if (StaticClass.currentUser.itemArray[indexPath.row].link.count <= 20) {
             cell.rightDetailButton?.setTitle(StaticClass.currentUser.itemArray[indexPath.row].link, for: .normal)
         }
+        
+        cell.rightDetailButton.tag = indexPath.row
         
         return cell
     }
@@ -138,6 +142,20 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     
+    @IBAction func linkButtonAction(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "toWebViewController", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nvc = segue.destination as! WebViewController
+        
+        //let buttonTag = (sender as! UIButton).tag
+        
+        //nvc.stringLink = StaticClass.currentUser.itemArray[buttonTag].link
+    }
     
     
     
