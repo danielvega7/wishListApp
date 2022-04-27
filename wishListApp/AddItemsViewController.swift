@@ -20,6 +20,7 @@ class AddItemsTableViewCell : UITableViewCell {
 
 class AddItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var indexOfLinkClicked = -1
     
     var selectedRow = 0
     
@@ -51,6 +52,7 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         cell.rightDetailButton.tag = indexPath.row
+        print("\(StaticClass.currentUser.itemArray[indexPath.row].name) - \(cell.rightDetailButton.tag)")
         
         return cell
     }
@@ -144,6 +146,7 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBAction func linkButtonAction(_ sender: UIButton) {
         
+        indexOfLinkClicked = sender.tag
         performSegue(withIdentifier: "toWebViewController", sender: nil)
         
     }
@@ -151,10 +154,8 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let nvc = segue.destination as! WebViewController
-        
-        //let buttonTag = (sender as! UIButton).tag
-        
-        //nvc.stringLink = StaticClass.currentUser.itemArray[buttonTag].link
+
+        nvc.stringLink = StaticClass.currentUser.itemArray[indexOfLinkClicked].link
     }
     
     
