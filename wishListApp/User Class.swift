@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 public class Items: Codable{
     var name: String
@@ -37,10 +38,25 @@ public class Groups: Codable{
     func add() {
         users.append(User(u: "default", p: "default", i: "defaultUser"))
     }
-    var groupImage: String
-    init(gn: String, gi: String){
+    var groupImage: Data
+    init(gn: String, gi: Data){
         groupName = gn
         groupImage = gi
+    }
+}
+public class ConvertedGroups{
+    var group: Groups
+    var dataFromGroup = Data()
+    var users = [User]()
+    
+    var groupImage: UIImage
+    init(g: Groups, i: UIImage){
+        group = g
+        groupImage = i
+    }
+    
+    func convert() {
+        dataFromGroup = group.groupImage
     }
 }
 
