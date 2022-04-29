@@ -38,8 +38,8 @@ public class Groups: Codable{
     func add() {
         users.append(User(u: "default", p: "default", i: "defaultUser"))
     }
-    var groupImage: Data
-    init(gn: String, gi: Data){
+    var groupImage: String
+    init(gn: String, gi: String){
         groupName = gn
         groupImage = gi
     }
@@ -56,7 +56,7 @@ public class ConvertedGroups{
     }
     
     func convert() {
-        dataFromGroup = group.groupImage
+        //dataFromGroup = group.groupImage
     }
 }
 

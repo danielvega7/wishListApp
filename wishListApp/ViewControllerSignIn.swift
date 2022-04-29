@@ -64,6 +64,9 @@ class ViewControllerSignIn: UIViewController {
   
     
     override func viewDidLoad() {
+        
+        print("This is happening")
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

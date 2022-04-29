@@ -45,9 +45,10 @@ class ViewController: UIViewController {
         logInButtonSegment.layer.cornerRadius = 20
         
         if StaticClass.currentUser.username != "default" {
+            print("happening")
             usernameUser.text = StaticClass.currentUser.username
-            logInButton.title = "ur mom"
-            //logInButton.setTitle("Logout", for: .normal)
+           // logInButton.title = "ur mom"
+           // logInButton.setTitle("Logout", for: .normal)
         }
         else{
             usernameUser.text = ""
