@@ -4,7 +4,7 @@
 //
 //  Created by DANIEL VEGA on 1/7/22.
 //
-
+//please chupapi munyano
 import UIKit
 import Firebase
 
@@ -58,7 +58,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CustomCell
         cell.textChange(t: StaticClass.currentUser.groupArray[indexPath.row].groupName)
-        cell.imageChange(i: StaticClass.currentUser.groupArray[indexPath.row].groupImage)
+        //cell.imageChange(i: StaticClass.currentUser.groupArray[indexPath.row].groupImage)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -89,7 +89,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
             let addGroupAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
                 if let groupName = textFields[0].text {
                     
-                    StaticClass.currentUser.groupArray.append(Groups(gn: groupName, gi: "defaultUser"))
+                    StaticClass.currentUser.groupArray.append(Groups(gn: groupName, gi: Data()))
 //                        let encoder = JSONEncoder()
 //
 //                        if let encoded = try? encoder.encode(StaticClass.userArray) {
