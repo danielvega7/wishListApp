@@ -4,7 +4,7 @@
 //
 //  Created by DANIEL VEGA on 1/7/22.
 //
-
+//please chupapi munyano
 import UIKit
 import Firebase
 
