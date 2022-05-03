@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var logInButtonSegment: UIButton!
     @IBOutlet weak var usernameUser: UILabel!
     
-    
+    // comment
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +49,7 @@ class ViewController: UIViewController {
             usernameUser.text = StaticClass.currentUser.username
            // logInButton.title = "ur mom"
            // logInButton.setTitle("Logout", for: .normal)
+            logInButtonSegment.setTitle("ur mom", for: .normal)
         }
         else{
             usernameUser.text = ""

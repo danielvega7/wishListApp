@@ -89,7 +89,7 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
             let addGroupAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
                 if let groupName = textFields[0].text {
                     
-                    StaticClass.currentUser.groupArray.append(Groups(gn: groupName, gi: Data()))
+                    StaticClass.currentUser.groupArray.append(Groups(gn: groupName, gi: "default user"))
 //                        let encoder = JSONEncoder()
 //
 //                        if let encoded = try? encoder.encode(StaticClass.userArray) {
