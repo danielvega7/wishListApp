@@ -53,11 +53,20 @@ class ViewControllerSignIn: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        firstButton.titleLabel?.textColor = UIColor.orange
+        /*firstButton.titleLabel?.textColor = UIColor.orange
+        print("happens 1")
         secondButton.titleLabel?.textColor = UIColor.lightGray
+        print("happens 2")
         
         firstImageView.backgroundColor = UIColor.orange
         secondImageView.backgroundColor = UIColor.lightGray
+        
+        usernameTextField.text = ""
+        passwordTextField.text = ""
+        confirmPasswordTextField.text = ""
+        
+        passwordsMatch()*/
+        signInClicked()
 
     }
     
@@ -204,7 +213,6 @@ class ViewControllerSignIn: UIViewController {
     }
     
     @IBAction func confirmPasswordsTextFieldAction(_ sender: UITextField) {
-        print("happens")
         if (confirmPasswordTextField.text != passwordTextField.text) {
             matchPasswords = false
             passwordsDifferent()
@@ -235,6 +243,13 @@ class ViewControllerSignIn: UIViewController {
         
         confirmPasswordTextField.isHidden = true
         passwordsDoNotMatchLabel.isHidden = true
+        
+        usernameTextField.text = ""
+        passwordTextField.text = ""
+        confirmPasswordTextField.text = ""
+        
+        passwordsMatch()
+        
     }
     
     
@@ -254,9 +269,15 @@ class ViewControllerSignIn: UIViewController {
         
         confirmPasswordTextField.isHidden = false
         
-        if (matchPasswords == false) {
+       /* if (matchPasswords == false) {
             passwordsDifferent()
-        }
+        }*/
+        
+        usernameTextField.text = ""
+        passwordTextField.text = ""
+        confirmPasswordTextField.text = ""
+        
+        passwordsMatch()
         
     }
     
