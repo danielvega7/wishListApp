@@ -59,6 +59,7 @@ class ViewControllerSignIn: UIViewController {
         firstImageView.backgroundColor = UIColor.orange
         secondImageView.backgroundColor = UIColor.lightGray
 
+        read()
     }
     
   
@@ -158,6 +159,7 @@ class ViewControllerSignIn: UIViewController {
                             }
                             j += 1
                         }
+                        writeUserArray()
                         performSegue(withIdentifier: "toViewController", sender: nil)
                        
                     }
@@ -188,7 +190,7 @@ class ViewControllerSignIn: UIViewController {
 
     
     @IBAction func passwordTextFieldAction(_ sender: UITextField) {
-        print("happens")
+        //print("happens")
         if (confirmPasswordTextField.text != passwordTextField.text) {
             matchPasswords = false
             if (confirmPasswordTextField.isHidden == false) {
@@ -204,7 +206,7 @@ class ViewControllerSignIn: UIViewController {
     }
     
     @IBAction func confirmPasswordsTextFieldAction(_ sender: UITextField) {
-        print("happens")
+      //  print("happens")
         if (confirmPasswordTextField.text != passwordTextField.text) {
             matchPasswords = false
             passwordsDifferent()
@@ -289,10 +291,81 @@ class ViewControllerSignIn: UIViewController {
     }
     
     //firebase
+    func read() {
+        
+            let docRef = self.db.collection("wishlist").document("wishlist")
+            docRef.getDocument { (document, error) in
+
+                if let document = document, document.exists {
+                    let dataDescription = document.data()!
+                    var data = [Data]()
+
+                    if let temp = dataDescription["userArray"] as? [Data] {
+                        data = temp
+                    }
+
+
+
+                    do{
+                        StaticClass.userArrayData = data
+                        let decoder = JSONDecoder()
+                       
+                        for each in data {
+                            print("is happening")
+                            StaticClass.userArray = try decoder.decode([User].self, from: each)
+                        }
+                        
+                        
+                        
+                    } catch {
+                        print("unable to encode class for loop")
+                    }
+                    do {
+                        let decoder = JSONDecoder()
+                        var c = 0
+                        while(c < data.count) {
+                            StaticClass.currentUser = try decoder.decode(User.self, from: data[c])
+                            print("testing \(StaticClass.currentUser.username)")
+                            StaticClass.userArray.append(StaticClass.currentUser)
+                            c+=1
+                            print("did read")
+                        }
+                       
+                    }
+                    catch {
+                        print("unable to encode class while loop")
+                    }
+                }
+            }
+            var what = 0
+            while(what < StaticClass.userArray.count){
+                print("user \(what): " + StaticClass.userArray[what].username)
+                what+=1
+            }
+        
+    }
     func writeUserArray() {
        
-        db.collection("wishlist").document("wishlist").setData(["userArray": StaticClass.groupArray], merge: true)
+        db.collection("wishlist").document("wishlist").setData(["userArray": StaticClass.userArrayData], merge: false)
 
+    }
+    
+    func convertToData() {
+        do {
+            let encoder = JSONEncoder()
+            
+//                for each in StaticStuff.allUsers {
+//                }
+            let data = try encoder.encode(StaticClass.userArray)
+            StaticClass.userArrayData.append(data)
+
+            
+           
+            self.writeUserArray()
+        }
+        catch {
+           print("rip took an L")
+        }
     }
     
 }

@@ -8,15 +8,7 @@
 import UIKit
 import Firebase
 
-public class StaticClass: Codable{
-    static var groupArray = [Groups]()
-    static var indexOf = 0
-    static var userArray = [User]()
-    static var currentUser = User(u: "default", p: "default", i: "defaultUser")
-    static var imagePicker = UIImagePickerController()
-    static var alertController = UIAlertController()
-    
-}
+
 class collectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
    
     
@@ -148,8 +140,8 @@ class collectionViewController: UIViewController, UICollectionViewDataSource, UI
                 self.collectionViewOutlet.reloadData()
                 self.present(StaticClass.imagePicker, animated: true, completion: nil)
             }
-            alertController.addAction(accessCameraAction)
-            alertController.addAction(accessLibraryAction)
+            //alertController.addAction(accessCameraAction)
+            //alertController.addAction(accessLibraryAction)
             alertController.addAction(action)
             
             

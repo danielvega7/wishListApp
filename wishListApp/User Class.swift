@@ -8,6 +8,16 @@
 import Foundation
 import UIKit
 import SwiftUI
+public class StaticClass: Codable{
+    static var groupArray = [Groups]()
+    static var indexOf = 0
+    static var userArray = [User]()
+    static var userArrayData = [Data]()
+    static var currentUser = User(u: "default", p: "default", i: "defaultUser")
+    static var imagePicker = UIImagePickerController()
+    static var alertController = UIAlertController()
+    
+}
 
 public class Items: Codable{
     var name: String
