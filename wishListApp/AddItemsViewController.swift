@@ -146,8 +146,18 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBAction func linkButtonAction(_ sender: UIButton) {
         
+        if (verifyUrl(urlString: StaticClass.currentUser.itemArray[indexOfLinkClicked].link) == true) {
+        
         indexOfLinkClicked = sender.tag
         performSegue(withIdentifier: "toWebViewController", sender: nil)
+            
+        }
+        
+        else {
+            
+            let invalidLinkAlertController = UIAlertController(title: "Invalid Link", message: "The URL of this link is not valid.", preferredStyle: .alert)
+            
+        }
         
     }
     
@@ -159,7 +169,14 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     
-    
+    func verifyUrl (urlString: String?) -> Bool {
+        if let urlString = urlString {
+            if let url = NSURL(string: urlString) {
+                return UIApplication.shared.canOpenURL(url as URL)
+            }
+        }
+        return false
+    }
     
     
     

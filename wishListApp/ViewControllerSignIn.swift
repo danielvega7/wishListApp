@@ -86,7 +86,7 @@ class ViewControllerSignIn: UIViewController {
         
         signInSignUpButton.backgroundColor = UIColor.blue
         signInSignUpButton.titleLabel?.textColor = UIColor.white
-        signInSignUpButton.layer.cornerRadius = 20
+        signInSignUpButton.layer.cornerRadius = 27
     }
     
     
