@@ -95,7 +95,7 @@ class ViewControllerSignIn: UIViewController {
         signInClicked()
     }
     
-    
+    // jerry mommy
     @IBAction func secondButtonAction(_ sender: UIButton) {
         signUpClicked()
     }
