@@ -85,10 +85,10 @@
                     <navigationItem key="navigationItem" id="owc-3B-ScQ">
                         <barButtonItem key="rightBarButtonItem" title="Log In" style="plain" id="EWq-x7-8GJ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1Jf-3K-m1R">
-                                <rect key="frame" x="270" y="2.6666666666666679" width="104" height="38.666666666666657"/>
+                                <rect key="frame" x="252.66666666666666" y="2.6666666666666679" width="121.33333333333334" height="38.666666666666657"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system" title="  Log In">
+                                <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system" title="  Log Out ">
                                     <fontDescription key="titleFontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>

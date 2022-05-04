@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             usernameUser.text = StaticClass.currentUser.username
            // logInButton.title = "ur mom"
            // logInButton.setTitle("Logout", for: .normal)
-            logInButtonSegment.setTitle("ur mom", for: .normal)
+           // logInButtonSegment.setTitle("Log Out", for: .normal)
         }
         else{
             usernameUser.text = ""
