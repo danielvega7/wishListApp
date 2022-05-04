@@ -247,7 +247,6 @@ class ViewControllerSignIn: UIViewController {
         
         firstImageView.backgroundColor = UIColor.lightGray
         secondImageView.backgroundColor = UIColor.orange
-        
         signInSignUpButton.setTitle("Sign Up", for: .normal)
         signInSignUpButton.setTitleColor(UIColor.white, for: .normal)
         
