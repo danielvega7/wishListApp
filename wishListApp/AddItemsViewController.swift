@@ -18,7 +18,8 @@ class AddItemsTableViewCell : UITableViewCell {
 
 
 class AddItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+    var cellClicked = AddItemsTableViewCell()
+    var storedIndexPath = IndexPath()
     var indexOfLinkClicked = -1
     
     var selectedRow = 0
@@ -118,8 +119,7 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
+ 
         let cell = tableViewOultet.cellForRow(at: indexPath)
         
         if(selectedCellsArray[indexPath.row] == false) {            cell!.backgroundColor = UIColor(red: 0, green: 0.7373, blue: 0.7882, alpha: 1)
@@ -159,7 +159,36 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let invalidLinkAlertController = UIAlertController(title: "Invalid Link", message: "The URL of this link is not valid.", preferredStyle: .alert)
             
-            let changeLinkAlertAction = UIAlertAction(title: "Change Link", style: .destructive, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>)
+            let changeLinkAlertAction = UIAlertAction(title: "Change Link", style: .destructive, handler: { action in
+                
+                let newAlertController = UIAlertController(title: "Invalid Link", message: "The URL of this link is not valid.", preferredStyle: .alert)
+                
+                self.dismiss(animated: false)
+                self.present(newAlertController, animated: false)
+                
+                newAlertController.addTextField { (textField) in
+                    textField.placeholder = "New Link"
+ 
+                }
+                let changeLinkAction = UIAlertAction(title: "Change Link", style: .default) { [weak  newAlertController] _ in guard let textFields = newAlertController?.textFields else { return }
+                    if let link = textFields[0].text {
+                        
+                           
+                            self.selectedCellsArray.append(false)
+                        
+                        let cell: AddItemsTableViewCell = self.tableViewOultet.cellForRow(at: self.storedIndexPath) as! AddItemsTableViewCell
+                        cell.rightDetailButton.setTitle(link, for: .normal)
+                        
+                        print("cell has been changed")
+                        self.tableViewOultet.reloadData()
+                    }
+              
+                }
+                newAlertController.addAction(changeLinkAction)
+                
+                
+                
+            })
             let cancelLinkAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
             
             invalidLinkAlertController.addAction(changeLinkAlertAction)

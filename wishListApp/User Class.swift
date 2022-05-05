@@ -40,6 +40,13 @@ public class User: Codable{
         itemArray = [Items]()
         groupArray = [Groups]()
     }
+    init(u: String, p: String, i: String, ia: [Items], ga: [Groups]) {
+        username = u
+        password = p
+        userImageString = i
+        itemArray = ia
+        groupArray = ga
+    }
     
 }
 public class Groups: Codable{

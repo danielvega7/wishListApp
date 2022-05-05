@@ -335,7 +335,7 @@ class ViewControllerSignIn: UIViewController {
                         print("while do")
                         print(data.count)
                         while(c < data.count) {
-                            print("while loop happening")
+                            print(data[c])
                             StaticClass.currentUser = try decoder.decode(User.self, from: data[c])
                             print("testing \(StaticClass.currentUser.username)")
                             StaticClass.userArray.append(StaticClass.currentUser)
