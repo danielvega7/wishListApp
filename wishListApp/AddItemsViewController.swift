@@ -36,7 +36,6 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     // let's see what happens gonna next
-    print("ok ok")
     
     /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         //StaticClass.currentUser
