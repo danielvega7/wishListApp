@@ -14,7 +14,6 @@ class AddItemsTableViewCell : UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rightDetailButton: UIButton!
     
-    
 }
 
 
@@ -34,6 +33,9 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
         tableViewOultet.dataSource = self
         // Do any additional setup after loading the view.
     }
+    
+    
+    // let's see what happens gonna next
     
     /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         //StaticClass.currentUser
@@ -156,6 +158,12 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
         else {
             
             let invalidLinkAlertController = UIAlertController(title: "Invalid Link", message: "The URL of this link is not valid.", preferredStyle: .alert)
+            
+            let changeLinkAlertAction = UIAlertAction(title: "Change Link", style: .destructive, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>)
+            let cancelLinkAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+            
+            invalidLinkAlertController.addAction(changeLinkAlertAction)
+            invalidLinkAlertController.addAction(cancelLinkAction)
             
         }
         
