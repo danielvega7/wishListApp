@@ -14,7 +14,6 @@ class AddItemsTableViewCell : UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rightDetailButton: UIButton!
     
-    
 }
 
 
@@ -34,6 +33,10 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
         tableViewOultet.dataSource = self
         // Do any additional setup after loading the view.
     }
+    
+    
+    // let's see what happens gonna next
+    print("ok ok")
     
     /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         //StaticClass.currentUser
