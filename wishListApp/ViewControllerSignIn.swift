@@ -49,7 +49,24 @@ class ViewControllerSignIn: UIViewController {
     @IBOutlet weak var passwordsDoNotMatchLabel: UILabel!
     
     
-    
+    override func viewDidLoad() {
+        
+        print("This is happening")
+        
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor(red: 0.9137, green: 0.9255, blue: 0.9686, alpha: 1)
+        
+        usernameTextField.layer.cornerRadius = 15
+        passwordTextField.layer.cornerRadius = 15
+        
+        signInSignUpButton.backgroundColor = UIColor.blue
+        signInSignUpButton.titleLabel?.textColor = UIColor.white
+        signInSignUpButton.layer.cornerRadius = 27
+        
+        read()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -68,34 +85,19 @@ class ViewControllerSignIn: UIViewController {
         passwordsMatch()*/
         signInClicked()
 
-        read()
+      //  read()
     }
     
   
     
-    override func viewDidLoad() {
-        
-        print("This is happening")
-        
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        view.backgroundColor = UIColor(red: 0.9137, green: 0.9255, blue: 0.9686, alpha: 1)
-        
-        usernameTextField.layer.cornerRadius = 15
-        passwordTextField.layer.cornerRadius = 15
-        
-        signInSignUpButton.backgroundColor = UIColor.blue
-        signInSignUpButton.titleLabel?.textColor = UIColor.white
-        signInSignUpButton.layer.cornerRadius = 27
-    }
+   
     
     
     @IBAction func firstButtonAction(_ sender: UIButton) {
         signInClicked()
     }
     
-    
+    // jerry mommy
     @IBAction func secondButtonAction(_ sender: UIButton) {
         signUpClicked()
     }
@@ -168,7 +170,7 @@ class ViewControllerSignIn: UIViewController {
                             }
                             j += 1
                         }
-                        writeUserArray()
+                        convertToData()
                         performSegue(withIdentifier: "toViewController", sender: nil)
                        
                     }
@@ -313,37 +315,27 @@ class ViewControllerSignIn: UIViewController {
     //firebase
     func read() {
         
-            let docRef = self.db.collection("wishlist").document("wishlist")
+            let docRef = db.collection("wishlist").document("wishlist")
             docRef.getDocument { (document, error) in
 
                 if let document = document, document.exists {
                     let dataDescription = document.data()!
                     var data = [Data]()
-
+                    print("data description getting stored")
                     if let temp = dataDescription["userArray"] as? [Data] {
                         data = temp
+                        print("stored as temp")
                     }
 
 
-
-                    do{
+                    do {
                         StaticClass.userArrayData = data
                         let decoder = JSONDecoder()
-                       
-                        for each in data {
-                            print("is happening")
-                            StaticClass.userArray = try decoder.decode([User].self, from: each)
-                        }
-                        
-                        
-                        
-                    } catch {
-                        print("unable to encode class for loop")
-                    }
-                    do {
-                        let decoder = JSONDecoder()
                         var c = 0
+                        print("while do")
+                        print(data.count)
                         while(c < data.count) {
+                            print("while loop happening")
                             StaticClass.currentUser = try decoder.decode(User.self, from: data[c])
                             print("testing \(StaticClass.currentUser.username)")
                             StaticClass.userArray.append(StaticClass.currentUser)
@@ -353,7 +345,7 @@ class ViewControllerSignIn: UIViewController {
                        
                     }
                     catch {
-                        print("unable to encode class while loop")
+                        print("unable to decode class while loop")
                     }
                 }
             }
@@ -376,11 +368,14 @@ class ViewControllerSignIn: UIViewController {
             
 //                for each in StaticStuff.allUsers {
 //                }
-            let data = try encoder.encode(StaticClass.userArray)
-            StaticClass.userArrayData.append(data)
-
-            
-           
+            var data = [Data]()
+            var c = 0
+            while(c < StaticClass.userArray.count) {
+            let data2 = try encoder.encode(StaticClass.userArray[c])
+                data.append(data2)
+                c += 1
+            }
+            StaticClass.userArrayData = data
             self.writeUserArray()
         }
         catch {
