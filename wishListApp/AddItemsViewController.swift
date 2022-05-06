@@ -21,7 +21,7 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     var cellClicked = AddItemsTableViewCell()
     var storedIndexPath = IndexPath()
     var indexOfLinkClicked = -1
-    
+    var whichClicked = -1
     var selectedRow = 0
     
     var selectedCellsArray : [Bool] = []
@@ -147,15 +147,21 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     @IBAction func linkButtonAction(_ sender: UIButton) {
+    
+               
+            
+            
+        indexOfLinkClicked = sender.tag
         
         if (verifyUrl(urlString: StaticClass.currentUser.itemArray[indexOfLinkClicked].link) == true) {
         
-        indexOfLinkClicked = sender.tag
-        performSegue(withIdentifier: "toWebViewController", sender: nil)
+            performSegue(withIdentifier: "toWebViewController", sender: nil)
             
         }
         
         else {
+            
+            print("reached alert controller")
             
             let invalidLinkAlertController = UIAlertController(title: "Invalid Link", message: "The URL of this link is not valid.", preferredStyle: .alert)
             
@@ -163,8 +169,8 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
                 
                 let newAlertController = UIAlertController(title: "Invalid Link", message: "The URL of this link is not valid.", preferredStyle: .alert)
                 
-                self.dismiss(animated: false)
-                self.present(newAlertController, animated: false)
+                self.dismiss(animated: true)
+                self.present(newAlertController, animated: true)
                 
                 newAlertController.addTextField { (textField) in
                     textField.placeholder = "New Link"
@@ -176,11 +182,16 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
                            
                             self.selectedCellsArray.append(false)
                         
-                        let cell: AddItemsTableViewCell = self.tableViewOultet.cellForRow(at: self.storedIndexPath) as! AddItemsTableViewCell
-                        cell.rightDetailButton.setTitle(link, for: .normal)
+                        //let indexPathOfLinkClicked =
                         
+                       // let cell: AddItemsTableViewCell = self.tableViewOultet.cellForRow(IndexPath(self.indexOfLinkClicked, 0)) as! AddItemsTableViewCell
+                       // cell.rightDetailButton.setTitle(link, for: .normal)
+                        
+                       
+                        
+                        StaticClass.currentUser.itemArray[self.indexOfLinkClicked].link = link
                         print("cell has been changed")
-                        self.tableViewOultet.reloadData()
+                        //self.tableViewOultet.reloadData()
                     }
               
                 }
@@ -193,8 +204,10 @@ class AddItemsViewController: UIViewController, UITableViewDataSource, UITableVi
             
             invalidLinkAlertController.addAction(changeLinkAlertAction)
             invalidLinkAlertController.addAction(cancelLinkAction)
-            
+            present(invalidLinkAlertController, animated: true)
         }
+        
+        tableViewOultet.reloadData()
         
     }
     
